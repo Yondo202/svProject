@@ -1,0 +1,251 @@
+@font-face {
+  font-family: Main;
+  src: url(http://admin-mn.tavanbogdproperty.mn/uploads/DIN_Pro_4c505f7ebc.otf);
+}
+@font-face {
+  font-family: MainBold;
+  src: url(http://admin-mn.tavanbogdproperty.mn/uploads/DIN_Pro_Black_2_53196f0f53.otf);
+}
+@font-face {
+  font-family: Second;
+  src: url(http://admin-mn.tavanbogdproperty.mn/uploads/Philosopher_Regular_cc6d157f43.ttf);
+}
+
+$ff-special: Second;
+$ff-bold: MainBold;
+$ff-main: Main;
+$fs-main: 18px;
+$fw-main: 300;
+
+body {
+  font-family: $ff-main;
+  font-size: $fs-main;
+  font-weight: $fw-main;
+  max-width: 100vw;
+  overflow-x: hidden;
+  strong{
+    font-weight:bold;
+    font-family: $ff-bold;
+  }
+  li {
+    list-style-type: none;
+  }
+  a {
+    &:hover {
+      text-decoration: none;
+    }
+    color: inherit !important;
+  }
+  button {
+    outline: none !important;
+  }
+  input:focus,
+  select:focus,
+  textarea:focus,
+  button:focus {
+      outline: none !important;
+  }
+}
+button {
+  background: none;
+  border: 1px solid;
+}
+
+#Header{
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  padding:15px 15px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  z-index: 10;
+  .flx{
+    flex:0.2;
+    display: flex;
+    align-items: center;
+  }
+  .center{
+    flex:0.8;
+    justify-content: center;
+    img{
+      text-align: center;
+      height: 150px;
+      &:hover{
+        cursor: pointer;
+      }
+    }
+  }
+  .right{
+    justify-content: flex-end;
+    svg{
+      font-size: 20px;
+      margin-top: -4px;
+    }
+  }
+
+}
+#Menu{
+  $width: 350px;
+  color: white;
+  &.active{
+    color: black;
+    .toggle{
+      margin-left: -300px;
+      flex-direction: row-reverse;
+      left: -210px;
+    }
+  }
+  .toggle{
+    display: flex;
+    position: relative;
+    z-index: 10;
+    transition: 1.5s ease;
+    &:hover{
+      cursor: pointer;
+    }
+    span{
+      margin-top: 2px;
+      margin-right: 15px;
+      padding-left: 10px;
+      font-size: 14px;
+    }
+  }
+  .content{
+    position: absolute;
+    height: 100vh;
+    background-color: white;
+    color: black;
+    top: 0;
+    align-items: center;
+    display: flex;
+    width: $width;
+    right: -$width;
+    transition: 0.5s ease;
+    .middle{
+      display: flex;
+      flex-direction: column;
+      padding-left: 30px;
+      .parent{
+        margin:10px 0px;
+        .parent-title{
+          margin-bottom: 15px;
+          svg{
+            margin-top: 2px;
+            margin-left: 10px;
+            animation-duration: 0.5s;
+            animation-iteration-count: infinite;
+            animation-direction: alternate-reverse;
+            animation-timing-function: ease;
+          }
+          @keyframes bounce {
+            from {margin-top: -10px;}
+            to {margin-top: 0px;}
+          }
+        }
+        &:hover{
+          cursor: pointer;
+        }
+        .child-con{
+          margin-left: 30px;
+          .child{
+            display: block;
+            margin-bottom: 10px;
+            &:first-child{
+              margin-top: 5vh;
+            }
+            &:last-child{
+              margin-bottom: 5vh;
+            }
+          }
+        }
+      }
+    }
+  }
+  .content.active{
+    right: 0px;
+  }
+}
+
+.slick-track{
+  display:flex;
+  align-items: center;
+}
+
+.Slug{
+  a{
+    text-transform: uppercase;
+    margin-right:10px;
+    &:after{
+      content:"-";
+      font-weight:300;
+      opacity:0.8;
+      margin-left: 10px;
+    }
+    &:last-child{
+      margin-right: 0px;
+      &:after{
+        display:none;
+      }
+    }
+  }
+}
+
+.search{
+  display:flex;
+  align-items: center;
+  &:after{
+    display: inline-block;
+    font-style: normal;
+    font-variant: normal;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    font-family: "Font Awesome 5 Free";
+    font-weight: 600;
+    content: "\f002";
+    margin-left: -20px;
+    opacity: 0.5;
+    &:hover{
+      cursor: pointer;
+    }
+  }
+  &:hover{
+    &:after{
+      opacity: 1;
+    }
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .slick-arrow.slick-next{
+    display: none;
+  }
+  #Header{
+    justify-content: center;
+
+    .left{
+      flex:1;
+    }
+
+    .right{
+      flex:1;
+
+      #Menu{
+        .content{
+          display: none;
+          transition: none;
+        }
+        .content.active{
+          display: flex;
+        }
+        .toggle{
+          span{
+            display: none;
+          }
+        }
+      }
+
+    }
+  }
+}
