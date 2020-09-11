@@ -87,7 +87,7 @@ const BlogGrids = () => {
                 searchedData.map((el,i)=>{
                     let date = new Date(el.createdAt)
                     return(
-                        <div className="col-md-4" style={{marginBottom: 30}} key={'cols'+i}>
+                        <div className="col-md-4" style={{marginBottom: 30, float:'left'}} key={'cols'+i}>
                             <motion.div className="box" variants={elem}>
                                 <Link href={R.pathname + '/' + el.Slug}>
                                     <a>
@@ -128,7 +128,7 @@ const BlogGrids = () => {
                 data.map((el,i)=>{
                     let date = new Date(el.createdAt)
                     return(
-                        <div className="col-md-4" style={{marginBottom: 30}} key={'cols'+i}>
+                        <div className="col-md-4" style={{marginBottom: 30, float:'left'}} key={'cols'+i}>
                             <motion.div className="box" variants={elem}>
                                 <Link href={R.pathname + '/' + el.Slug}>
                                     <a>

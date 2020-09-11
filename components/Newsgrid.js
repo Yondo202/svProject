@@ -13,8 +13,8 @@ const Newsgrid = () => {
                     View all <BsArrowRight/>
                 </Button>
             </div>
-            <div className="row" style={{overflow:'hidden'}}>
-                <div className="col-md-4" style={{float:'left'}}>
+            <div className="row">
+                <div className="col-md-4">
                     <div className="box" style={{backgroundImage: 'url(http://nestin.bold-themes.com/smart/wp-content/uploads/sites/2/2018/09/post_03-640x960.jpg)'}}>
                         <div className="textbox">
                             <small>Real Estate</small>
@@ -23,7 +23,7 @@ const Newsgrid = () => {
                         </div>
                     </div>
                 </div>
-                <div className="col-md-4" style={{float:'left'}}>
+                <div className="col-md-4">
                     <div className="box" style={{backgroundImage: 'url(http://nestin.bold-themes.com/smart/wp-content/uploads/sites/2/2018/09/post_03-640x960.jpg)'}}>
                         <div className="textbox">
                             <small>Real Estate</small>
@@ -32,7 +32,7 @@ const Newsgrid = () => {
                         </div>
                     </div>
                 </div>
-                <div className="col-md-4" style={{float:'left'}}>
+                <div className="col-md-4">
                     <div className="box" style={{backgroundImage: 'url(http://nestin.bold-themes.com/smart/wp-content/uploads/sites/2/2018/09/post_03-640x960.jpg)'}}>
                         <div className="textbox">
                             <small>Real Estate</small>
