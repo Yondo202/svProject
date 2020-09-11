@@ -13,7 +13,9 @@ class Header extends React.Component {
                     <div className="flx left" style={{opacity:0}} >EMPTY</div>
                     <div className="flx center">
                         <Link href="/">
-                            <img src="/img/logo.png" />
+                            <a>
+                                <img src="/img/logo.png" />
+                            </a>
                         </Link>
                     </div>
                     <div className="flx right">
