@@ -41,6 +41,6 @@
     "npm": ">=6.0.0"
   },
   "devDependencies": {
-    "babel-plugin-styled-components": "^1.10.7"
+    "babel-plugin-styled-components": "^1.11.1"
   }
 }
