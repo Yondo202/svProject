@@ -229,6 +229,9 @@ const Container = styled.div`
             }
             p{
                 font-weight:400;
+                max-height:108px;
+                min-height:108px;
+                height:108px;
             }
             a{
                 font-weight:400;
