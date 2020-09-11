@@ -40,6 +40,7 @@ const queryString = `
         Map {
             Latitude Longtitude Zoom
         }
+        GoogleTagManagerID
     }
 }`;
 
@@ -51,21 +52,22 @@ class MyApp extends App {
     async componentDidMount() {
         let data = await checkLanguage(queryString, null);
         this.setState({ menu: data.data.menu, information: data.data.generalInfo });
-        // const tagManagerArgs = {
-        //     gtmId: "GTM-W384LJJ",
-        // };
-        // TagManager.initialize(tagManagerArgs);
+        
+        // GOOGLE TAG MANAGER
+        const tagManagerArgs = {
+            gtmId: data.data.generalInfo.GoogleTagManagerID,
+        };
+        TagManager.initialize(tagManagerArgs);
 
-        const script = document.createElement("script");
-
-        script.src = require("../core/gt");
-        script.async = true;
-
-        document.body.appendChild(script);
+        // INJECTING SCRIPTS
+        // const script = document.createElement("script");
+        // script.src = require("../core/gt");
+        // script.async = true;
+        // document.body.appendChild(script);
     }
-    componentWillUnmount() {
-        document.body.removeChild(script);
-    }
+    // componentWillUnmount() {
+    //     document.body.removeChild(script);
+    // }
 
     render() {
         const { Component, pageProps, router } = this.props;

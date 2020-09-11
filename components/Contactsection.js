@@ -2,32 +2,20 @@ import React from "react";
 import styled from "styled-components";
 import LinedText from "@/shared/LinedText";
 import H1 from "./shared/H1";
+import {Parser} from 'html-to-react'
+const parser = new Parser();
 
-const ContactForm = () => {
+const ContactForm = ({data}) => {
     return (
         <Container className="container">
             <div className="row">
                 <div className="col-md-6">
-                    <LinedText red>CONTACT</LinedText>
-                    <H1>
-                        <strong>Schedule A Visit</strong>
-                        <br />
-                        Or Give Us A Call
-                    </H1>
-                    <p>
-                        It is a long established fact that a reader will be
-                        distracted by the readable content of a page when
-                        looking at its layout. The point of using Lorem Ipsum is
-                        that it has a more-or-less normal distribution of
-                        letters, as opposed to using 'Content here, content
-                        here', making it look like readable English.
-                    </p>
+                    <LinedText red>{data.Caption && data.Caption}</LinedText>
+                    <H1>{data.Title && data.Title.includes("|") ? <SemiBreak data={data.Title}/> : data.Title}</H1>
+                    <p>{data.Description && data.Description}</p>
                 </div>
                 <div className="col-md-6 right">
-                    <div
-                        data-erxes-embed="s96Gsj"
-                        style={{width:'100%', height:'auto'}}
-                    ></div>
+                    {parser.parse(data.Erxes)}
                 </div>
             </div>
         </Container>
@@ -70,3 +58,14 @@ const Container = styled.div`
         }
     }
 `;
+
+const SemiBreak = ({data}) => {
+    let prepare = data.split("|");
+    return (
+        <>
+            <strong>{prepare[0]}</strong>
+            <br />
+            {prepare[1]}
+        </>
+    )
+}

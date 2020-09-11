@@ -7,6 +7,7 @@ import checkLanguage from "@/components/miscs/checkLanguage";
 
 const Index = ({data}) => {
     let {Layout} = data
+    console.log('hehe')
     return (
         <motion.div
             exit={{ opacity: 0 }}
