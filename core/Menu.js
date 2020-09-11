@@ -49,7 +49,7 @@ const Menu = ({links}) => {
                                                     {i === subMenu ? 
                                                     <motion.div initial={{ opacity: 0, y:20 }} animate={{ opacity: 1, y:0 }} transition={{ duration: 0.6, ease: 'easeInOut' }}>
                                                         <div className="child-con selectchild">
-                                                            {el.Submenu.length ? el.Submenu.map((ch,k)=><Link href={ch.Path ? ch.Path : ''} key={k}><a><span onClick={handleClick} tabIndex="x" className="child">- {ch.Title}</span></a></Link>) : null}
+                                                            {el.Submenu.length ? el.Submenu.map((ch,k)=><Link href={ch.Path ? ch.Path : ''} key={k}><a target="_blank"><span onClick={handleClick} tabIndex="x" className="child">- {ch.Title}</span></a></Link>) : null}
                                                         </div>
                                                     </motion.div>
                                                     :null}
@@ -57,7 +57,7 @@ const Menu = ({links}) => {
                                         </div>
                                         :
                                         <Link href={el.Path} key={i}>
-                                            <a>
+                                            <a target="_blank">
                                                 <div className="parent">
                                                     <div className="parent-title">{el.Title}</div>
                                                 </div>
