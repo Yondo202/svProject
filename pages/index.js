@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import Root from "@/core/Root";
 import ResolveComponent from "@/components/dynamic/ResolveComponent"
 import checkLanguage from "@/components/miscs/checkLanguage";
+import Pixel from "@/components/miscs/Pixel";
 
 const Index = ({data}) => {
     let {Layout} = data
@@ -16,6 +17,7 @@ const Index = ({data}) => {
             <Head>
                 <title>Tavan Bogd Properties</title>
                 <meta name="description" content="To be continued..." />
+                <Pixel/>
             </Head>
             <Root noFooter>
                 <ResolveComponent data={Layout}/>
