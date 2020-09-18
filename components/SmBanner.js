@@ -8,7 +8,7 @@ const SmBanner = () => {
             <div className="row">
                 <div className="col-md-12" style={{height:'10vh'}}></div>
                 <div className="col-md-12 bottom">
-                    <h1>Blog Grid</h1>
+                    <h1 style={{marginBottom:50}}>Мэдээ мэдээлэл</h1>
                     <Slug/>
                 </div>
             </div>

@@ -14,8 +14,9 @@ const ContactForm = ({data}) => {
                     <H1>{data.Title && data.Title.includes("|") ? <SemiBreak data={data.Title}/> : data.Title}</H1>
                     <p>{data.Description && data.Description}</p>
                 </div>
-                <div className="col-md-6 right">
-                    {parser.parse(data.Erxes)}
+                <div className="col-md-6 right" dangerouslySetInnerHTML={{
+                    __html: `${data.Erxes}`
+                }}>
                 </div>
             </div>
         </Container>
