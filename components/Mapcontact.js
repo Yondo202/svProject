@@ -1,5 +1,5 @@
 import React, { useEffect, useContext } from "react";
-import Map from "@/components/miscs/map";
+import Map from "@/components/miscs/Map";
 import styled from "styled-components";
 import H1 from "@/shared/H1";
 import {GoLocation} from 'react-icons/go';
