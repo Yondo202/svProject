@@ -12,10 +12,11 @@ const ResolveComponent = ({data}) => {
                 const Comp = await importComponent(sanitizeComponentName(el.__component));
                 return <Comp key={'cmp'+i} data={el}/>
             });
-            Promise.all(componentPromises).then(setViews);
+            Promise.all(componentPromises).then((res)=>setViews(res));
         }
         loadViews()
-    },[])
+    },[data]);
+
     return (
         <React.Suspense fallback="Loading views...">
             {views}

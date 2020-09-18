@@ -13,7 +13,6 @@ import minimize from "@/components/miscs/minimize";
 
 const Footer = () => {
     const {information} = useContext(MenuContext);
-    console.log(information,'footer')
     return (
         <Container>
             <div className="container">

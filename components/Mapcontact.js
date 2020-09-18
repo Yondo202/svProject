@@ -1,5 +1,5 @@
 import React, { useEffect, useContext } from "react";
-import Map from "@/miscs/Map";
+import Map from "@/components/miscs/map";
 import styled from "styled-components";
 import H1 from "@/shared/H1";
 import {GoLocation} from 'react-icons/go';
@@ -11,7 +11,6 @@ import minimize from "./miscs/minimize";
 
 const MapContact = ({data}) => {
     const {information} = useContext(MenuContext);
-    console.log(information,'yeyeaaaa')
     useEffect(() => {
         const vw = Math.max(
             document.documentElement.clientWidth || 0,
