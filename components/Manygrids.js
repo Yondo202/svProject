@@ -28,7 +28,7 @@ const Container = styled.div `
     flex-wrap: wrap;
     .box{
         text-align:center;
-        min-width:250px;
+        width:250px;
         margin-top:15px;
         margin-bottom:15px;
         svg{
