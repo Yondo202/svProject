@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import minimize from "./miscs/minimize";
 
 const Grid2 = ({data}) => {
     let {Grids} = data
@@ -9,7 +10,7 @@ const Grid2 = ({data}) => {
                 {Grids.map((el,i)=>{
                     return(
                         <div key={'grid2'+i} className="col-md-6 flexes">
-                            <img src="/img/award.png" />
+                            <img src={minimize(el.Image, true)} />
                             <div>
                                 <h4>{el.Title && el.Title}</h4>
                                 <p>{el.Description && el.Description}</p>
