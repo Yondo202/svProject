@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import {BsHouseDoor} from 'react-icons/bs';
+import minimize from './miscs/minimize';
 
 const Manygrids = ({data}) => {
     return (
@@ -8,7 +9,7 @@ const Manygrids = ({data}) => {
             {data.SingleGrids.map((el,i)=>{
                 return(
                     <div className="box" key={'singlegrids'+i}>
-                        <BsHouseDoor/>
+                        <img src={minimize(el.Image, true)}/>
                         {el.Title && el.Title.includes("|") ? <SemiBreak data={el.Title}/> : <p>{el.Title}</p>}
                         <h3>{el.Caption}</h3>
                     </div>
@@ -31,8 +32,9 @@ const Container = styled.div `
         width:250px;
         margin-top:15px;
         margin-bottom:15px;
-        svg{
-            font-size:50px;
+        img{
+            height:50px;
+            width:50px;
             margin-bottom:15px;
             opacity:0.9;
         }
