@@ -8,7 +8,7 @@ const LinedGrid = ({data}) => {
         <Container
             style={{
                 backgroundImage:
-                    `url(${minimize(data.Background, true)})`,
+                    `url(${minimize(data.Background, true, true)})`,
             }}
         >
             <div className="container">
