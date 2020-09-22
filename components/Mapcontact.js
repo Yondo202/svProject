@@ -18,10 +18,17 @@ const MapContact = ({data}) => {
         );
         if (vw > 768) {
             let element = document.querySelector(".col-md-4");
-            let left = element.getBoundingClientRect().left;
-            let width = element.offsetWidth;
-            document.querySelector(".box-map").style.marginLeft = left + "px";
-            document.querySelector(".box-map").style.width = width + 45 + "px";
+            if(element){
+                let left = element.getBoundingClientRect().left;
+                let width = element.offsetWidth;
+                document.querySelector(".box-map").style.marginLeft = left + "px";
+                document.querySelector(".box-map").style.width = width + 45 + "px";
+            }
+            else{
+                document.querySelector(".box-map").style.marginLeft = "20vw";
+                document.querySelector(".box-map").style.width = "400px";
+                document.querySelector(".box-map").style.maxWidth = "100%";
+            }
         }
     }, []);
     return (
