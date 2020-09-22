@@ -11,27 +11,29 @@ const LinedGrid = ({data}) => {
                     `url(${minimize(data.Background, true, true)})`,
             }}
         >
-            <div className="container">
-                <div className="row">
-                    <div className="col-md-6 left">
-                        <H1>
-                            {data.Title && data.Title.includes("|") ? <SemiBreak data={data.Title}/>:data.Title}
-                        </H1>
-                        <p>{data.Description && data.Description}</p>
-                    </div>
-                    <div className="col-md-6 right">
-                        {data.DueDateLines.map((el,i)=>{
-                            return(
-                                <div className="lined" key={'linedgrid'+i}>
-                                    <p>{el.Caption}</p>
-                                    <div className="bar">
-                                        <div className="fill" style={{width: `${el.Progress}%`}}>
-                                            <span>{el.ProgressText}</span>
+            <div id="Linedgrid-opacity">
+                <div className="container">
+                    <div className="row">
+                        <div className="col-md-6 left">
+                            <H1>
+                                {data.Title && data.Title.includes("|") ? <SemiBreak data={data.Title}/>:data.Title}
+                            </H1>
+                            <p>{data.Description && data.Description}</p>
+                        </div>
+                        <div className="col-md-6 right">
+                            {data.DueDateLines.map((el,i)=>{
+                                return(
+                                    <div className="lined" key={'linedgrid'+i}>
+                                        <p>{el.Caption}</p>
+                                        <div className="bar">
+                                            <div className="fill" style={{width: `${el.Progress}%`}}>
+                                                <span>{el.ProgressText}</span>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                            )
-                        })}
+                                )
+                            })}
+                        </div>
                     </div>
                 </div>
             </div>
@@ -42,11 +44,14 @@ const LinedGrid = ({data}) => {
 export default LinedGrid;
 
 const Container = styled.div`
-    padding-top:10vh;
-    padding-bottom:10vh;
     background-size: cover;
     background-position:center center;
     color:white;
+    #Linedgrid-opacity{
+        background:rgba(0,0,0,0.8);
+        padding-top:10vh;
+        padding-bottom:10vh;
+    }
     .left{
         p{
             width:90%;
