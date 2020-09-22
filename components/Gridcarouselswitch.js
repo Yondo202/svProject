@@ -25,7 +25,6 @@ const Goals = ({data}) => {
     return (
         <Container className="container">
             <Carousel className="Selectionswitch row"
-            // arrows
             slidesPerPage={data.Tabs.length < 4 ? data.Tabs.length : 3} infinite numberOfSlides={1} animationSpeed={1000}
                 breakpoints={{ 768: { slidesPerPage: 3 } }}>
                 {data.Tabs.map((el,i)=><div onClick={setHandler} tabIndex={i} key={i+el._id}>{el.Title}</div>)}
