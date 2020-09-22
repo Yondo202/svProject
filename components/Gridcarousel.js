@@ -20,7 +20,7 @@ const Goals = ({data}) => {
         <Container className="container">
             {data.LeftSide ?
                 <div className="row">
-                    <div className="col-md-6">
+                    <div className="col-md-6 centerize">
                         <LinedText red>{data.Caption && data.Caption}</LinedText>
                         <H1 style={{width:'80%'}}>{data.Title && data.Title.includes("|") ? <SemiBold data={data.Title}/> : <strong style={{ fontWeight: "bold" }}>{data.Title}</strong>}</H1>
                         <P style={{ marginBottom: 30 }}>{data.Description && data.Description}</P>
@@ -39,7 +39,7 @@ const Goals = ({data}) => {
                                 {data.Carousel.map((el,i)=><ImgBox key={i+el.Image && el.Image.url}><img src={minimize(el.Image, true)} /></ImgBox>)}
                             </Slider>
                     </div>
-                    <div className="col-md-6">
+                    <div className="col-md-6 centerize flexize">
                         <LinedText red>{data.Caption && data.Caption}</LinedText>
                         <H1 style={{width:'80%'}}>{data.Title && data.Title.includes("|") ? <SemiBold data={data.Title}/> : <strong style={{ fontWeight: "bold" }}>{data.Title}</strong>}</H1>
                         <P style={{ marginBottom: 30 }}>{data.Description && data.Description}</P>
@@ -56,6 +56,15 @@ export default Goals;
 const Container = styled.div`
     padding-top: 10vh;
     padding-bottom: 5vh;
+    .centerize{
+        display:flex;
+        flex-direction:column;
+        justify-content:center;
+    }
+    .flexize{
+        align-items:flex-end;
+        text-align:right;
+    }
     .slick-slider{
         .slick-arrow{
             display:none !important;
