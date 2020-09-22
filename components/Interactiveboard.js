@@ -5,6 +5,7 @@ import Button from "@/shared/Button";
 import { AiOutlineDownload } from "react-icons/ai";
 import { BsChevronDown } from "react-icons/bs";
 import { motion } from "framer-motion";
+import minimize from "./miscs/minimize";
 
 const StructureClick = ({data}) => {
     useEffect(() => {
@@ -51,7 +52,7 @@ const StructureClick = ({data}) => {
                         className="box"
                         style={{
                             backgroundImage:
-                                "url(http://nestin.bold-themes.com/smart/wp-content/uploads/sites/2/2020/01/interactive_image_01-1280x733.jpg)",
+                                "url(" + minimize(data.Image, true, true) + ")",
                         }}
                     >
                         {data.Points.map((el, i) => {
