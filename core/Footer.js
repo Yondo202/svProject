@@ -123,6 +123,7 @@ const Container = styled.div`
                 align-items:center;
                 color:white;
                 border-radius:100%;
+                margin-bottom:0px !important;
             }
         }
     }
