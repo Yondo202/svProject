@@ -57,7 +57,7 @@ const Menu = ({links}) => {
                                         </div>
                                         :
                                         <Link href={el.Path} key={i}>
-                                            <a>
+                                            <a target={el.Path.includes('.') && "_blank"}>
                                                 <div className="parent">
                                                     <div className="parent-title">{el.Title}</div>
                                                 </div>

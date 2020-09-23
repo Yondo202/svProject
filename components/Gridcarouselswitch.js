@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import LinedText from "@/shared/LinedText";
 import H1 from "@/shared/H1";
@@ -11,7 +11,6 @@ import "@/core/brainhubeau.scss";
 
 const Goals = ({data}) => {
     const [selected, setSelected] = useState(data.Tabs[0]);
-    // const ref = useRef(null)
     const setHandler = (e) => {
         let list = e.target.parentElement.parentElement.children
         Array.from(list, e=>e.classList.remove('active'));
