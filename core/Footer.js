@@ -100,6 +100,7 @@ const Container = styled.div`
             .caption{
                 color:${props=>props.theme.mainRed};
                 margin-bottom:3px;
+                font-family: Second;
             }
             img{
                 width:40px;
