@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import styled from "styled-components";
 import LinedText from "@/shared/LinedText";
 import H1 from "@/shared/H1";
@@ -6,14 +6,21 @@ import Button from "@/shared/Button";
 import { IoIosArrowRoundForward } from "react-icons/io";
 import Slider from "react-slick";
 import minimize from "./miscs/minimize";
-import Carousel from '@brainhubeu/react-carousel'
+import Carousel from '@brainhubeu/react-carousel';
+import "@/core/brainhubeau.scss";
 
 const Goals = ({data}) => {
     const [selected, setSelected] = useState(data.Tabs[0]);
     // const ref = useRef(null)
     const setHandler = (e) => {
+        let list = e.target.parentElement.parentElement.children
+        Array.from(list, e=>e.classList.remove('active'));
+        e.target.parentElement.classList.add('active');
         setSelected(data.Tabs[e.target.tabIndex])
     }
+    useEffect(()=>{
+        document.querySelector('.BrainhubCarouselItem').classList.add('active');
+    },[])
     const settings = {
         dots: true,
         fade: true,
@@ -25,7 +32,7 @@ const Goals = ({data}) => {
     return (
         <Container className="container">
             <Carousel className="Selectionswitch row"
-            slidesPerPage={data.Tabs.length < 4 ? data.Tabs.length : 3} infinite numberOfSlides={1} animationSpeed={1000}
+            slidesPerPage={data.Tabs.length < 5 ? data.Tabs.length : 4} numberOfSlides={1} animationSpeed={1000}
                 breakpoints={{ 768: { slidesPerPage: 3 } }}>
                 {data.Tabs.map((el,i)=><div onClick={setHandler} tabIndex={i} key={i+el._id}>{el.Title}</div>)}
             </Carousel>
@@ -67,7 +74,7 @@ export default Goals;
 
 const Container = styled.div`
     padding-top: 10vh;
-    padding-bottom: 5vh;
+    padding-bottom: 6vh;
 
     .Selectionswitch{
         margin-bottom:30px;
@@ -83,13 +90,12 @@ const Container = styled.div`
                 }
             }
         }
-        ${'' /* .BrainhubCarouselItem--active{
+        li.active{
             div{
-                background:${props=>props.theme.mainRed};
+                background: ${props => props.theme.mainRed};
                 color:white;
             }
-        } */}
-        
+        }
     }
 
     .centerize{
