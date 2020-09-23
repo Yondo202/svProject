@@ -29,9 +29,6 @@ class SimpleMap extends Component {
                 defaultCenter={this.props.center}
                 defaultZoom={this.props.zoom}
                 defaultOptions={{ styles: require('./map.json') }}
-                options={{
-                    styles: require('./map.json')
-                }}
             >
                 <AnyReactComponent
                     lat={this.props.center.lat}
