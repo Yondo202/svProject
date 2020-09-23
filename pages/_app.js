@@ -21,16 +21,13 @@ const queryString = `
     }
     generalInfo {
         CompanyName
-        Phone
-        Location
-        Email
+        Phone PhoneCaption PhoneIcon {url formats}
+        Location LocationCaption LocationIcon {url formats}
+        Email EmailCaption EmailIcon {url formats}
         Facebook
         Twitter
         Youtube
         Instagram
-        FooterLinks {
-          Title Path
-        }
         Logo {
             url
         }

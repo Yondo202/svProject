@@ -1,12 +1,10 @@
 import React, { useContext } from "react";
 import styled from "styled-components";
-import { BsHouseFill } from "react-icons/bs";
-import { GrMail } from "react-icons/gr";
 import {
     FaFacebookF,
     FaTwitter,
     FaYoutube,
-    FaPhoneAlt,
+    FaInstagram
 } from "react-icons/fa";
 import { MenuContext } from "@/components/miscs/ContextMenuProvider";
 import minimize from "@/components/miscs/minimize";
@@ -17,52 +15,60 @@ const Footer = () => {
         <Container>
             <div className="container">
                 <div className="row">
-                    <div className="col-md-3">
-                        <div className="title"><img style={{height:150}} src={minimize(information.Logo2, true)}/></div>
-                        <div className="top">
-                            <p>
-                                <BsHouseFill />
-                                <span>{information.Location && information.Location}</span>
-                            </p>
-                            <p>
-                                <GrMail />
-                                <span>{information.Email && information.Email}</span>
-                            </p>
+                <div className="col-md-3 left lineup">
+                    <img src={minimize(information.Logo2, true)} />
+                </div>
+                <div className="col-md-6 middle lineup">
+                    <div className="box">
+                        <img src={minimize(information.LocationIcon, true)}/>
+                        <div>
+                            <h4 className="caption">{information.LocationCaption}</h4>
+                            <p>{information.Location}</p>
                         </div>
-                        <div className="bottom">
-                            <p>Follow us:</p>
-                            <div className="social-link">
-                                <span>
-                                    <a href={information.Facebook && information.Facebook}><FaFacebookF /></a>
-                                </span>
-                                <span>
-                                    <a href={information.Twitter && information.Twitter}><FaTwitter /></a>
-                                </span>
-                                <span>
-                                    <a href={information.Youtube && information.Youtube}><FaYoutube /></a>
-                                </span>
+                    </div>
+                    <div className="box">
+                        <img src={minimize(information.EmailIcon, true)}/>
+                        <div>
+                            <h4 className="caption">{information.EmailCaption}</h4>
+                            <p>{information.Email}</p>
+                        </div>
+                    </div>
+                </div>
+                <div className="col-md-3 right lineup">
+                    <div className="box">
+                        <img src={minimize(information.PhoneIcon, true)}/>
+                        <div>
+                            <h4 className="caption">{information.PhoneCaption}</h4>
+                            <p>{information.Phone}</p>
+                        </div>
+                    </div>
+                    <div className="socials">
+                        <a href={information.Facebook} target="_blank">
+                            <div className="back">
+                                <FaFacebookF/>
                             </div>
-                        </div>
+                        </a>
+                        
+                        <a href={information.Twitter} target="_blank">
+                            <div className="back">
+                                <FaTwitter/>
+                            </div>
+                        </a>
+                        
+                        <a href={information.Youtube} target="_blank">
+                            <div className="back">
+                                <FaYoutube/>
+                            </div>
+                        </a>
+
+                        <a href={information.Instagram} target="_blank">
+                            <div className="back">
+                                <FaInstagram/>
+                            </div>
+                        </a>
+                        
                     </div>
-                    <div className="col-md-3">
-                        <div className="title">Links</div>
-                        <div className="other">
-                            {information.FooterLinks && information.FooterLinks.map((el,i)=><a key={'ftrlnk'+i} href={el.Path}><li>{el.Title}</li></a>)}
-                        </div>
-                    </div>
-                    <div className="col-md-3">
-                        <div className="title">Instagram</div>
-                        <div className="other">
-                        </div>
-                    </div>
-                    <div className="col-md-3">
-                        <div className="title">Contact us</div>
-                        <div className="other">
-                            <p className="phone">
-                                <FaPhoneAlt /> {information.Phone && information.Phone}
-                            </p>
-                        </div>
-                    </div>
+                </div>
                 </div>
             </div>
         </Container>
@@ -72,58 +78,50 @@ const Footer = () => {
 export default Footer;
 
 const Container = styled.div`
-    padding-top: 10vh;
-    padding-bottom: 10vh;
+    padding-top: 45px;
+    padding-bottom: 60px;
     background-color: ${(props) => props.theme.lightGrey};
-    .top {
-        margin-bottom: 25px;
-        p {
-            display: flex;
-            svg {
-                font-size: 20px;
-                margin-right: 10px;
-                color: ${(props) => props.theme.mainRed};
-            }
-            span {
-                margin-top: -2px;
-            }
+    .left{
+        img{
+            width:150px;
         }
     }
-    .bottom {
-        .social-link {
-            span {
-                display: inline-block;
-                text-align: center;
-                line-height: 27.5px;
-                width: 30px;
-                height: 30px;
-                border-radius: 100%;
-                color: white;
-                background: ${(props) => props.theme.mainRed};
-                margin-right: 15px;
+    .lineup{
+        display:flex;
+        flex-direction:column;
+        justify-content:space-evenly;
+        div{
+            &:first-child{
+                margin-bottom:20px;
             }
         }
-    }
-    .title {
-        color: ${(props) => props.theme.mainRed};
-        font-weight: 500;
-        text-transform: uppercase;
-        margin-bottom: 5vh;
-    }
-    .other {
-        p {
-            color: ${(props) => props.theme.mainRed};
+        .box{
+            display:flex;
+            .caption{
+                color:${props=>props.theme.mainRed};
+                margin-bottom:3px;
+            }
+            img{
+                width:40px;
+                margin-right:30px;
+            }
+            p{
+                margin-bottom:0px;
+            }
         }
-        li {
-            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-            margin-bottom: 10px;
-            padding-bottom: 10px;
-        }
-        .phone {
-            svg {
-                font-size: 12px;
-                margin-top: -3px;
-                margin-right: 5px;
+        .socials{
+            display:flex;
+            padding-top: 15px;
+            justify-content:space-between;
+            .back{
+                height:40px;
+                width:40px;
+                background:${props=>props.theme.mainRed};
+                display:flex;
+                justify-content:center;
+                align-items:center;
+                color:white;
+                border-radius:100%;
             }
         }
     }
