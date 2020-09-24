@@ -1,11 +1,42 @@
 import React from "react";
 import App from "next/app";
 import { AnimatePresence } from "framer-motion";
-import checkLanguage from "@/miscs/checkLanguage";
 import { MenuProvider } from "@/miscs/ContextMenuProvider";
 import { ThemeProvider } from "styled-components";
 import * as theme from "@/miscs/theme";
 import TagManager from "react-gtm-module";
+import Axios from "axios";
+
+class MyApp extends App {
+    state = {
+        menu: {},
+        information: {}
+    };
+    async componentDidMount() {
+        const res = await Axios.post('/api/base', {query: `query ${queryString}`})
+        this.setState({ menu: res.data.data.menu, information: res.data.data.generalInfo })
+        
+        // GOOGLE TAG MANAGER
+        const tagManagerArgs = { gtmId: res.data.data.generalInfo.GoogleTagManagerID };
+        TagManager.initialize(tagManagerArgs);
+    }
+
+    render() {
+        const { Component, pageProps, router } = this.props;
+
+        return (
+            <ThemeProvider theme={theme}>
+                <MenuProvider value={this.state}>
+                    <AnimatePresence exitBeforeEnter>
+                        <Component {...pageProps} key={router.route} />
+                    </AnimatePresence>
+                </MenuProvider>
+            </ThemeProvider>
+        );
+    }
+}
+
+export default MyApp;
 
 const queryString = `
 {
@@ -40,45 +71,3 @@ const queryString = `
         GoogleTagManagerID
     }
 }`;
-
-class MyApp extends App {
-    state = {
-        menu: {},
-        information: {}
-    };
-    async componentDidMount() {
-        let data = await checkLanguage(queryString, null);
-        this.setState({ menu: data.data.menu, information: data.data.generalInfo });
-        
-        // GOOGLE TAG MANAGER
-        const tagManagerArgs = {
-            gtmId: data.data.generalInfo.GoogleTagManagerID,
-        };
-        TagManager.initialize(tagManagerArgs);
-
-        // INJECTING SCRIPTS
-        // const script = document.createElement("script");
-        // script.src = require("../core/gt");
-        // script.async = true;
-        // document.body.appendChild(script);
-    }
-    // componentWillUnmount() {
-    //     document.body.removeChild(script);
-    // }
-
-    render() {
-        const { Component, pageProps, router } = this.props;
-
-        return (
-            <ThemeProvider theme={theme}>
-                <MenuProvider value={this.state}>
-                    <AnimatePresence exitBeforeEnter>
-                        <Component {...pageProps} key={router.route} />
-                    </AnimatePresence>
-                </MenuProvider>
-            </ThemeProvider>
-        );
-    }
-}
-
-export default MyApp;
