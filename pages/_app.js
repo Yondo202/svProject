@@ -13,9 +13,10 @@ class MyApp extends App {
         information: {}
     };
     async componentDidMount() {
-        const res = await Axios.post('/api/base', {query: `query ${queryString}`})
+        let res = null
+        await Axios.post('/api/base', {query: `query ${queryString}`}).then((ress)=>res = ress)
+        console.log(res,'what?')
         this.setState({ menu: res.data.data.menu, information: res.data.data.generalInfo })
-        
         // GOOGLE TAG MANAGER
         const tagManagerArgs = { gtmId: res.data.data.generalInfo.GoogleTagManagerID };
         TagManager.initialize(tagManagerArgs);
