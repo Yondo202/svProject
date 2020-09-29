@@ -1,5 +1,5 @@
 const placeholder = '/img/placeholder.jpg'
-const path = `http://192.168.10.88:1341`;
+const path = `http://admin-mn.tavanbogdproperty.mn`;
 
 const minimize = (obj, withUrl, highQuality) => {
     if(obj === undefined || obj === null) return placeholder
