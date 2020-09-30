@@ -17,6 +17,17 @@ const StructureClick = ({data}) => {
         element.style.marginLeft = "-" + minus + "px";
         element.style.height = element.offsetWidth * 0.6 + "px";
         document.querySelector(".opts").classList.add("active");
+
+        const init = () => {
+            var script = document.createElement('script');
+            script.src = "https://erxes.tavanbogd.mn/widgets/build/eventsWidget.bundle.js";
+            script.async = true;
+            var entry = document.getElementsByTagName('script')[0];
+            entry.parentNode.insertBefore(script, entry);
+            console.log('Initialization successful1');
+        }
+        init();
+
     }, []);
 
     const handleClick = (i) => {
@@ -25,6 +36,11 @@ const StructureClick = ({data}) => {
         list[i].classList.add("active");
         setContent(i);
     };
+
+    const testHandler = () =>{
+        console.log('hh')
+        window.Erxes.sendEvent({ name: 'get-start', attributes: { price: 100, view: '80%' } });
+    }
 
     const [content, setContent] = useState(0);
     return (
@@ -43,6 +59,7 @@ const StructureClick = ({data}) => {
                         alignItems: "center",
                     }}
                 >
+                    <Button onClick={testHandler}>Tester</Button>
                     {data.Button && <a href={data.Link && data.Link}><Button red>{data.Button} <AiOutlineDownload /></Button></a>}
                 </div>
             </div>
