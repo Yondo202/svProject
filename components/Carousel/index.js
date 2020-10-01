@@ -74,6 +74,10 @@ const Container = styled.div`
     height: 100vh;
     position: relative;
     overflow: hidden;
+    background-image: url(/img/load.jpg);
+    background-color:black;
+    background-repeat:no-repeat;
+    background-position:center center;
     .img {
         width: 100%;
         height: 100%;
