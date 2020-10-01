@@ -10,6 +10,7 @@ import checkLanguage from "@/miscs/checkLanguage";
 import months from "@/miscs/months";
 import minimize from '@/miscs/minimize';
 import decrease from "@/miscs/decrease";
+import Axios from "axios";
 
 
 const BlogGrids = () => {
@@ -39,8 +40,9 @@ const BlogGrids = () => {
             }
         }
         `;
-        let res = await checkLanguage(queryString, null);
-        setData(res.data.newsletters)
+        let res = await Axios.post('/api/base', {query: `${queryString}`});
+        setData(res.data.data.newsletters);
+        
         setLoad(true)
     }
 
@@ -51,8 +53,19 @@ const BlogGrids = () => {
         if(e.key === 'Enter'){
             if(search !== ""){
                 setLoad(false);
-                let res = await checkLanguage(`/newsletters?Title_contains=${search}`, null, true)
-                res.data.length ? setSearchedData(res.data) : window.alert(`No results with "${search}"`);
+                let tmp = `
+                {
+                    newsletters(where:{Title_contains: "${search}"}){
+                        Title
+                        Thumb {url formats}
+                        Content
+                        Slug
+                        createdAt
+                    }
+                }`;
+                // let res = await checkLanguage(tmp, null);
+                let res = await Axios.post('/api/base', {query: `${queryString}`});
+                res.data.data.newsletters.length ? setSearchedData(res.data.data.newsletters) : window.alert(`No results with "${search}"`);
                 return setLoad(true);
             }
             closeSearchHandler();
