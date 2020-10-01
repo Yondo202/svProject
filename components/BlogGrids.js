@@ -64,7 +64,7 @@ const BlogGrids = () => {
                     }
                 }`;
                 // let res = await checkLanguage(tmp, null);
-                let res = await Axios.post('/api/base', {query: `${queryString}`});
+                let res = await Axios.post('/api/base', {query: `${tmp}`});
                 res.data.data.newsletters.length ? setSearchedData(res.data.data.newsletters) : window.alert(`No results with "${search}"`);
                 return setLoad(true);
             }
