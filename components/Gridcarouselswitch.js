@@ -16,7 +16,7 @@ const Goals = ({data}) => {
         Array.from(list, e=>e.classList.remove('active'));
         e.target.parentElement.classList.add('active');
         setSelected(data.Tabs[e.target.tabIndex]);
-        window.Erxes.updateCustomerProperty(`Ө.З.Б-${Math.floor(Math.floor() * 100)}`, title);
+        window.Erxes.updateCustomerProperty(`Ө.З.Б-${Math.floor(Math.random() * 100)}`, title);
     }
     useEffect(()=>{
         document.querySelector('.BrainhubCarouselItem').classList.add('active');
