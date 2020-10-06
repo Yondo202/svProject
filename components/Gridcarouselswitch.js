@@ -11,14 +11,23 @@ import "@/core/brainhubeau.scss";
 
 const Goals = ({data}) => {
     const [selected, setSelected] = useState(data.Tabs[0]);
-    const setHandler = (e) => {
+    const setHandler = (e, title) => {
         let list = e.target.parentElement.parentElement.children
         Array.from(list, e=>e.classList.remove('active'));
         e.target.parentElement.classList.add('active');
-        setSelected(data.Tabs[e.target.tabIndex])
+        setSelected(data.Tabs[e.target.tabIndex]);
+        window.Erxes.updateCustomerProperty('Өрөөний зохион байгуулалт', title)
     }
     useEffect(()=>{
         document.querySelector('.BrainhubCarouselItem').classList.add('active');
+        const trackErxes = () => {
+            var script = document.createElement('script');
+            script.src = "https://erxes.tavanbogd.mn/widgets/build/eventsWidget.bundle.js";
+            script.async = true;
+            var entry = document.getElementsByTagName('script')[0];
+            entry.parentNode.insertBefore(script, entry);
+        }
+        trackErxes();
     },[])
     const settings = {
         dots: true,
@@ -33,7 +42,7 @@ const Goals = ({data}) => {
             <Carousel className="Selectionswitch row"
             slidesPerPage={data.Tabs.length < 5 ? data.Tabs.length : 4} numberOfSlides={1} animationSpeed={1000}
                 breakpoints={{ 768: { slidesPerPage: 3 } }}>
-                {data.Tabs.map((el,i)=><div onClick={setHandler} tabIndex={i} key={i+el._id}>{el.Title}</div>)}
+                {data.Tabs.map((el,i)=><div onClick={(e)=>setHandler(e,el.Title)} summary={el.Title} tabIndex={i} key={i+el._id}>{el.Title}</div>)}
             </Carousel>
             
             {selected.LeftSide ?
