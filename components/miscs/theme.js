@@ -7,3 +7,4 @@ export const fontSizeBig2 = '45px'
 export const fontSizeBig = '56px'
 export const fontSizeMedium = '30px';
 export const fontFamily2 = "'Ruda', sans-serif;";
+export const fontSizeMediumM = "20px";

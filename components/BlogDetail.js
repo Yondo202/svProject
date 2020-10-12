@@ -7,13 +7,14 @@ import {Parser} from 'html-to-react';
 import months from "@/miscs/months";
 import decrease from './miscs/decrease';
 import Link from 'next/link';
+import SocialFixed from '@/components/SocialFixed'
 
 const BlogDetail = ({data, other}) => {
     const ContentParser = new Parser();
     const ParsedContent = ContentParser.parse(data.Content);
-    console.log(other);
     return (
         <Container className="container">
+            <SocialFixed thumb={minimize(data.Thumb[0], true, true)} title={data.Title} url={data.Slug} description={decrease(data.Content, 160)}/>
             <div className="row">
                 <div className="col-md-9 left">
                     <img className="mainimg" src={minimize(data.Thumb[0], true, true)} />
