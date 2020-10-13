@@ -24,7 +24,7 @@ const Carousel = ({data}) => {
     return (
         <>
             <Container>
-                <Slider image={minimize(Slide[current].Image, 'large')} title={Slide[current].Title}/>
+                <Slider image={minimize(Slide[current].Image)} title={Slide[current].Title}/>
                 <motion.div initial={{opacity:0, y:-25}} animate={{opacity:1, y:0, transition: { delay: 2, duration:1 }}} className="toggle-container">
                     <li id="prev" onClick={()=>arrowHandler(-1)}><BsChevronUp fontSize={20} style={{marginBottom:15}}/></li>
                     {Slide.map((el,i)=><li className="dots" onClick={()=>dotHandler(i)} key={el._id}><GoPrimitiveDot/></li>)}

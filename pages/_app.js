@@ -10,11 +10,13 @@ import Axios from "axios";
 class MyApp extends App {
     state = {
         menu: {},
-        information: {}
+        information: {},
+        config: {},
     };
     async componentDidMount() {
         const res = await Axios.post('/api/base', {query: `query ${queryString}`})
-        this.setState({ menu: res.data.data.menu, information: res.data.data.generalInfo })
+        const config = {width: window.innerWidth, height: window.innerHeight};
+        this.setState({ menu: res.data.data.menu, information: res.data.data.generalInfo, config })
         
         // GOOGLE TAG MANAGER
         const tagManagerArgs = { gtmId: res.data.data.generalInfo.GoogleTagManagerID };
