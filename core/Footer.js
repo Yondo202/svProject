@@ -147,5 +147,8 @@ const Container = styled.div`
         .middle{
             margin-bottom:20px;
         }
+        .socials{
+            justify-content: space-evenly !important;
+        }
     }
 `;
