@@ -29,7 +29,7 @@ const Container = styled.div `
     }
     .right{
         background:grey;
-        flex:2
+        flex:2;
         background-size:cover;
         background-position:center center;
         background-repeat:no-repeat;
