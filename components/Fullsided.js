@@ -30,6 +30,9 @@ const Container = styled.div `
     .right{
         background:grey;
         flex:2
+        background-size:cover;
+        background-position:center center;
+        background-repeat:no-repeat;
     }
     .absolute{
         position:absolute;
@@ -48,6 +51,20 @@ const Container = styled.div `
         }
         p{
             ${props => props.left && "text-align:right"};
+        }
+    }
+    @media (max-width: 768px) {
+        height:auto !important;
+        display:block;
+        .absolute{
+            position:unset !important;
+            width:unset !important;
+        }
+        .right{
+            height:50vh;
+        }
+        h1{
+            font-size: ${({theme})=>theme.fontSizeBigM};
         }
     }
 `

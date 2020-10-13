@@ -121,12 +121,6 @@ const Container = styled.div`
     .top {
         margin-bottom: 2vh;
     }
-    @media (max-width: 768px) {
-        .row{
-            margin-right:0px !important;
-            padding:15px;
-        }
-    }
     h1 {
         strong {
             font-weight: bold;
@@ -193,6 +187,25 @@ const Container = styled.div`
         }
         }
     }
+    @media (max-width: 768px) {
+        .row{
+            margin-right:0px !important;
+            padding:15px;
+        }
+        h1{
+            font-size: ${({theme})=>theme.fontSizeBigM};
+        }
+        .top{
+            margin-bottom:0px;
+            .col-md-6{
+                justify-content:flex-start;
+                button{
+                    padding:10px 20px;
+                }
+            }
+        }
+        
+    }
 `;
 
 const Options = styled.div`
@@ -226,23 +239,6 @@ const Options = styled.div`
         }
     }
 `;
-
-const data = [
-    {
-        name: "FLOORS",
-        desc:
-            "Windows, skylights, vents, and glass portions of doors helps to control solar heat loss and gains.",
-        top: 90,
-        left: 70,
-    },
-    {
-        name: "WINDOWS",
-        desc:
-            "An energy recovery ven­ti­la­tion system provides con­trolled ven­ti­la­tion and minimizes energy loss change management inside.",
-        top: 30,
-        left: 60,
-    },
-];
 
 const SemiBold = ({data}) => {
     let prepare = data.split("|");

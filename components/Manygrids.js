@@ -51,6 +51,14 @@ const Container = styled.div `
             opacity:0.9;
         }
     }
+    @media only screen and (max-width: 768px){
+        h3{
+            font-size: ${({theme})=>theme.fontSizeBigM};
+        }
+        .box{
+            height:auto !important;
+        }
+    }
 `
 const SemiBreak = ({data}) => {
     let prepare = data.split("|");

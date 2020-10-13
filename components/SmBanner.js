@@ -6,7 +6,7 @@ const SmBanner = () => {
     return (
         <Container className="container-fluid" style={{backgroundImage: 'url(https://www.toursmongolia.com/uploads/5db67cd6-0cfc-4cec-a18b-4a97a2f1e629-capital_city_ulaanbaatar.JPG)'}}>
             <div className="row">
-                <div className="col-md-12" style={{height:'10vh'}}></div>
+                <div className="col-md-12 top" style={{height:'10vh'}}></div>
                 <div className="col-md-12 bottom">
                     <h1 style={{marginBottom:50}}>Мэдээ мэдээлэл</h1>
                     <Slug/>
@@ -36,6 +36,22 @@ const Container = styled.div `
         }
         .Slug{
             text-align:center;
+        }
+    }
+    @media (max-width: 768px){
+        .top{
+            height:170px !important;
+        }
+        .bottom{
+            padding:15px;
+        }
+        h1{
+            font-size:${({theme})=>theme.fontSizeBigM} !important;
+            margin-bottom:15px !important;
+            text-transform:uppercase;
+        }
+        .Slug{
+            display:none;
         }
     }
 `

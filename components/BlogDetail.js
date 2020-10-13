@@ -113,4 +113,19 @@ const Container = styled.div `
             }
         }           
     }
+    @media (max-width: 768px){
+        .left{
+            .content{
+                margin-top:15px;
+                border-top:1px solid rgba(0,0,0,0.05);
+                border-bottom:1px solid rgba(0,0,0,0.05);
+                margin-bottom:15px;
+                padding-left:0px;
+                padding-right:0px;
+            }
+        }
+        .maintitle{
+            font-size:${({theme})=>theme.fontSizeBigM};
+        }
+    }
 `

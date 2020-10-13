@@ -87,6 +87,11 @@ const Container = styled.div`
             }
         }
     }
+    @media only screen and (max-width: 768px){
+        h1{
+            font-size: ${props=>props.theme.fontSizeBigM};
+        }
+    }
 `;
 
 const P = styled.div`

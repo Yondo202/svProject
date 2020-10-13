@@ -33,6 +33,12 @@ const Container = styled.div`
     .row{
         background-color: rgba(0,0,0,0.5);
     }
+    @media only screen and (max-width: 768px){
+        h1{
+            font-size: ${props=>props.theme.fontSizeBigM};
+        }
+
+    }
 `;
 
 const TextContainer = styled.div`
@@ -42,6 +48,9 @@ const TextContainer = styled.div`
 
 const P = styled.div `
     max-width:500px;
+    @media only screen and (max-width: 768px){
+        font-size: ${props=>props.theme.fontSizeM};
+    }
 `
 
 const SemiBold = ({data}) => {

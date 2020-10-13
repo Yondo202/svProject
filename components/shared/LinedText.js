@@ -22,6 +22,9 @@ const LinedText = styled.div`
         margin-right: 15px;
         margin-bottom: 5px;
     }
+    @media only screen and (max-width: 768px){
+        font-size: ${props=>props.theme.fontSizeM};
+    }
 `;
 
 export default LinedText;

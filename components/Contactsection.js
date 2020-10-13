@@ -58,6 +58,11 @@ const Container = styled.div`
             color: white;
         }
     }
+    @media (max-width: 768px){
+        h1{
+            font-size: ${({theme})=>theme.fontSizeBigM};   
+        }
+    }
 `;
 
 const SemiBreak = ({data}) => {

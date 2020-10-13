@@ -127,4 +127,25 @@ const Container = styled.div`
             }
         }
     }
+    @media (max-width: 768px){
+        .left{
+            margin-bottom:30px;
+            img{
+                display:block;
+                margin:0px auto;
+            }
+        }
+        .middle,.right{
+            h4{
+                font-size: ${({theme})=>theme.fontSizeMediumM};
+            }
+            p{
+                font-size: ${({theme})=>theme.fontSizeM};
+                line-height:${({theme})=>theme.fontSizeM};
+            }
+        }
+        .middle{
+            margin-bottom:20px;
+        }
+    }
 `;

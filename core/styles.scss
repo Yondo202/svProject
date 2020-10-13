@@ -216,8 +216,11 @@ button {
     }
   }
 }
-
+.slick-list{
+  overflow: hidden !important;
+}
 @media only screen and (max-width: 768px) {
+  body{font-size: 16px;}
   .slick-arrow.slick-next{
     display: none;
   }
