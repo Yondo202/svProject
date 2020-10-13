@@ -16,18 +16,18 @@ const Footer = () => {
             <div className="container">
                 <div className="row">
                 <div className="col-md-3 left lineup">
-                    <img src={minimize(information.Logo2, true)} />
+                    <img src={minimize(information.Logo2, 'small')} />
                 </div>
                 <div className="col-md-6 middle lineup">
                     <div className="box">
-                        <img src={minimize(information.LocationIcon, true)}/>
+                        <img src={minimize(information.LocationIcon, 'small')}/>
                         <div>
                             <h4 className="caption">{information.LocationCaption}</h4>
                             <p>{information.Location}</p>
                         </div>
                     </div>
                     <div className="box">
-                        <img src={minimize(information.EmailIcon, true)}/>
+                        <img src={minimize(information.EmailIcon, 'small')}/>
                         <div>
                             <h4 className="caption">{information.EmailCaption}</h4>
                             <p>{information.Email}</p>
@@ -36,7 +36,7 @@ const Footer = () => {
                 </div>
                 <div className="col-md-3 right lineup">
                     <div className="box">
-                        <img src={minimize(information.PhoneIcon, true)}/>
+                        <img src={minimize(information.PhoneIcon, 'small')}/>
                         <div>
                             <h4 className="caption">{information.PhoneCaption}</h4>
                             <p>{information.Phone}</p>

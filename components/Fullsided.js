@@ -7,7 +7,7 @@ const Fullsided = ({data}) => {
     return (
         <Container left={data.LeftSided}>
             <div className="offscreen left"></div>
-            <div className="offscreen right" style={{backgroundImage:`url(${minimize(data.Image, true, true)})`}}></div>
+            <div className="offscreen right" style={{backgroundImage:`url(${minimize(data.Image, 'large')})`}}></div>
             <div className="absolute">
                 <H1>{data.Title && data.Title.includes("|") ? <SemiBreak data={data.Title}/> : data.Title}</H1>
                 <p>{data.Description && data.Description}</p>

@@ -21,7 +21,7 @@ const Team = ({data}) => {
                     {Employees.map((el,i)=>{
                         return(
                             <Person key={i+el.Image && el.Image.url}>
-                                <img src={minimize(el.Image, true)} />
+                                <img src={minimize(el.Image, 'medium')} />
                                 <div>
                                     <h4>{el.Name && el.Name}</h4>
                                     <p>{el.Position && el.Position}</p>

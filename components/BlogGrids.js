@@ -104,7 +104,7 @@ const BlogGrids = () => {
                             <motion.div className="box" variants={elem}>
                                 <Link href={R.pathname + '/' + el.Slug}>
                                     <a>
-                                        <motion.div variants={elemImg} className="img" style={{backgroundImage:`url(${minimize(el.Thumb[0],true)})`,}}>
+                                        <motion.div variants={elemImg} className="img" style={{backgroundImage:`url(${minimize(el.Thumb[0],'thumbnail')})`,}}>
                                             <div className="date">
                                                 <p>{date.getDate()}</p>
                                                 <small>{months[date.getMonth()]}</small>
@@ -145,7 +145,7 @@ const BlogGrids = () => {
                             <motion.div className="box" variants={elem}>
                                 <Link href={R.pathname + '/' + el.Slug}>
                                     <a>
-                                        <motion.div variants={elemImg} className="img" style={{backgroundImage:`url(${minimize(el.Thumb[0],true)})`,}}>
+                                        <motion.div variants={elemImg} className="img" style={{backgroundImage:`url(${minimize(el.Thumb[0],'thumbnail')})`,}}>
                                             <div className="date">
                                                 <p>{date.getDate()}</p>
                                                 <small>{months[date.getMonth()]}</small>

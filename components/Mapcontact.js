@@ -39,7 +39,7 @@ const MapContact = ({data}) => {
                         className="img"
                         style={{
                             backgroundImage:
-                                `url(${minimize(data.CardImage, true)})`,
+                                `url(${minimize(data.CardImage, 'medium')})`,
                         }}
                     ></div>
                     <div className="captions">
@@ -72,7 +72,7 @@ const MapContact = ({data}) => {
                 </div>
             </div>
             <div className="mapcon">
-                <Map center={{lat: information.Map.Latitude, lng: information.Map.Longtitude}} zoom={information.Map.Zoom} img={minimize(information.Logo, true)} />
+                <Map center={{lat: information.Map.Latitude, lng: information.Map.Longtitude}} zoom={information.Map.Zoom} img={minimize(information.Logo, 'small')} />
             </div>
         </Container>
     );

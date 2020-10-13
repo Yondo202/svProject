@@ -8,7 +8,7 @@ const LinedGrid = ({data}) => {
         <Container
             style={{
                 backgroundImage:
-                    `url(${minimize(data.Background, true, true)})`,
+                    `url(${minimize(data.Background, 'large')})`,
             }}
         >
             <div id="Linedgrid-opacity">

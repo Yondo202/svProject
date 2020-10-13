@@ -55,7 +55,7 @@ const Goals = ({data}) => {
                     </div>
                     <div className="col-md-6" style={{alignItems: 'center', display: 'flex'}}>
                             <Slider {...settings} style={{width:'100%'}}>
-                                {selected.Images.map((el,i)=><ImgBox key={i+el && el.url}><img src={minimize(el, true)} /></ImgBox>)}
+                                {selected.Images.map((el,i)=><ImgBox key={i+el && el.url}><img src={minimize(el, 'medium')} /></ImgBox>)}
                             </Slider>
                     </div>
                 </div>
@@ -63,7 +63,7 @@ const Goals = ({data}) => {
                 <div className="row">
                     <div className="col-md-6" style={{alignItems: 'center', display: 'flex'}}>
                             <Slider {...settings} style={{width:'100%'}}>
-                                {selected.Images.map((el,i)=><ImgBox key={i+el && el.url}><img src={minimize(el, true)} /></ImgBox>)}
+                                {selected.Images.map((el,i)=><ImgBox key={i+el && el.url}><img src={minimize(el, 'medium')} /></ImgBox>)}
                             </Slider>
                     </div>
                     <div className="col-md-6 centerize flexize">

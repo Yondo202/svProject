@@ -52,7 +52,7 @@ const StructureClick = ({data}) => {
                         className="box"
                         style={{
                             backgroundImage:
-                                "url(" + minimize(data.Image, true, true) + ")",
+                                "url(" + minimize(data.Image, 'large') + ")",
                         }}
                     >
                         {data.Points.map((el, i) => {

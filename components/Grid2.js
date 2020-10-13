@@ -10,7 +10,7 @@ const Grid2 = ({data}) => {
                 {Grids.map((el,i)=>{
                     return(
                         <div key={'grid2'+i} className="col-md-6 flexes">
-                            <img src={minimize(el.Image, true)} />
+                            <img src={minimize(el.Image, 'medium')} />
                             <div>
                                 <h4>{el.Title && el.Title}</h4>
                                 <p>{el.Description && el.Description}</p>

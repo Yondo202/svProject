@@ -8,7 +8,7 @@ const TopLand = ({data}) => {
     return (
         <Container
             className="container-fluid"
-            style={{ backgroundImage: `url(${minimize(data.Background, true, true)})`}}
+            style={{ backgroundImage: `url(${minimize(data.Background, 'large')})`}}
         >
             <div className="row">
                 <div className="container">

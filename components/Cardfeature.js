@@ -13,7 +13,7 @@ const CardFeature = ({data}) => {
                         <div className="col-md-4" key={'cards'+i}>
                             <div className={`box ${el.Special && "red"}`}>
                                 <div className="top">
-                                    <img src={minimize(el.Single, true)} />
+                                    <img src={minimize(el.Single, 'small')} />
                                 </div>
                                 <div className="bottom">
                                     <LinedText className="linedtext" white>{el.Caption && el.Caption}</LinedText>

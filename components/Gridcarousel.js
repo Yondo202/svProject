@@ -28,7 +28,7 @@ const Goals = ({data}) => {
                     </div>
                     <div className="col-md-6" style={{alignItems: 'center', display: 'flex'}}>
                             <Slider {...settings} style={{width:'100%'}}>
-                                {data.Carousel.map((el,i)=><ImgBox key={i+el.Image && el.Image.url}><img src={minimize(el.Image, true)} /></ImgBox>)}
+                                {data.Carousel.map((el,i)=><ImgBox key={i+el.Image && el.Image.url}><img src={minimize(el.Image, 'medium')} /></ImgBox>)}
                             </Slider>
                     </div>
                 </div>
@@ -36,7 +36,7 @@ const Goals = ({data}) => {
                 <div className="row">
                     <div className="col-md-6" style={{alignItems: 'center', display: 'flex'}}>
                             <Slider {...settings} style={{width:'100%'}}>
-                                {data.Carousel.map((el,i)=><ImgBox key={i+el.Image && el.Image.url}><img src={minimize(el.Image, true)} /></ImgBox>)}
+                                {data.Carousel.map((el,i)=><ImgBox key={i+el.Image && el.Image.url}><img src={minimize(el.Image, 'medium')} /></ImgBox>)}
                             </Slider>
                     </div>
                     <div className="col-md-6 centerize flexize">

@@ -9,7 +9,7 @@ const Manygrids = ({data}) => {
             {data.SingleGrids.map((el,i)=>{
                 return(
                     <div className="box" key={'singlegrids'+i}>
-                        <img src={minimize(el.Image, true)}/>
+                        <img src={minimize(el.Image, 'small')}/>
                         {el.Title && el.Title.includes("|") ? <SemiBreak data={el.Title}/> : <p>{el.Title}</p>}
                         <h3>{el.Caption}</h3>
                     </div>

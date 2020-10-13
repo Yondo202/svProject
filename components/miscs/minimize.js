@@ -1,20 +1,35 @@
+import {MenuContext} from '@/miscs/ContextMenuProvider'
+import { useContext } from 'react';
+
 const placeholder = '/img/placeholder.jpg'
 const path = `http://admin-mn.tavanbogdproperty.mn`;
 
-const minimize = (obj, withUrl, highQuality) => {
+const minimize = (obj, quality) => {
+
     if(obj === undefined || obj === null) return placeholder
-    if(obj.formats === undefined || obj.formats === null){
-        if(obj.url === undefined || obj.url === null) return placeholder
-        return withUrl ? path + obj.url : obj.url
+    if(obj.formats === undefined || obj.formats === null) return obj.url && CH(obj.url) || placeholder
+
+    const {config} = useContext(MenuContext)    
+    const formats = obj.formats
+
+    if(config.width <= 768) {
+        if(quality === 'large') return formats.small && CH(formats.small.url) || formats.medium && CH(formats.medium.url) || formats.large && CH(formats.large.url) || obj.url && CH(obj.url) || placeholder
+        if(quality === 'medium') return formats.small && CH(formats.small.url) || formats.medium && CH(formats.medium.url) || formats.large && CH(formats.large.url) || obj.url && CH(obj.url) || placeholder
+        if(quality === 'small') return formats.thumbnail && CH(formats.thumbnail.url) || formats.small && CH(formats.small.url) || formats.medium && CH(formats.medium.url) || formats.large && CH(formats.large.url) || obj.url && CH(obj.url) || placeholder
+        if(quality === 'thumbnail') return formats.thumbnail && CH(formats.thumbnail.url) || formats.small && CH(formats.small.url) || formats.medium && CH(formats.medium.url) || formats.large && CH(formats.large.url) || obj.url && CH(obj.url) || placeholder
+        return formats.medium && CH(formats.medium.url) || formats.large && CH(formats.large.url) || obj.url && CH(obj.url) || placeholder
     }
-    if(highQuality){
-        return withUrl ? path + obj.url : obj.url
-    }
-    else if(obj.formats.medium === undefined || obj.formats.medium === null){
-        if(obj.formats.large === undefined || obj.formats.large === null){
-            return withUrl ? path + obj.url : obj.url
-        } else {return withUrl ? path + obj.formats.large.url : obj.formats.large.url}
-    } else { return withUrl ? path + obj.formats.medium.url : obj.formats.medium.url }
+
+    if(quality === 'large') return formats.large && CH(formats.large.url) || obj.url && CH(obj.url) || placeholder
+    if(quality === 'medium') return formats.medium && CH(formats.medium.url) || formats.large && CH(formats.large.url) || obj.url && CH(obj.url) || placeholder
+    if(quality === 'small') return formats.small && CH(formats.small.url) || formats.medium && CH(formats.medium.url) || formats.large && CH(formats.large.url) || obj.url && CH(obj.url) || placeholder
+    if(quality === 'thumbnail') return formats.thumbnail && CH(formats.thumbnail.url) || formats.small && CH(formats.small.url) || formats.medium && CH(formats.medium.url) || formats.large && CH(formats.large.url) || obj.url && CH(obj.url) || placeholder
+    return obj.url && CH(obj.url) || placeholder
 }
 
 export default minimize
+
+const CH = (url) => {
+    if(url.includes('http')) return url
+    return path + url
+}

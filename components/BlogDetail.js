@@ -14,10 +14,10 @@ const BlogDetail = ({data, other}) => {
     const ParsedContent = ContentParser.parse(data.Content);
     return (
         <Container className="container">
-            <SocialFixed thumb={minimize(data.Thumb[0], true, true)} title={data.Title} url={data.Slug} description={decrease(data.Content, 160)}/>
+            <SocialFixed thumb={minimize(data.Thumb[0], 'medium')} title={data.Title} url={data.Slug} description={decrease(data.Content, 160)}/>
             <div className="row">
                 <div className="col-md-9 left">
-                    <img className="mainimg" src={minimize(data.Thumb[0], true, true)} />
+                    <img className="mainimg" src={minimize(data.Thumb[0], 'large')} />
                     <LinedText className="linedtext" red>REAL ESTATE</LinedText>
                     <h1 className="maintitle">{data.Title}</h1>
                     <div className="datecon">
@@ -34,7 +34,7 @@ const BlogDetail = ({data, other}) => {
                             <div className="box" key={'box'+i}>
                                 <Link href={'/news/'+el.Slug}>
                                     <a>
-                                        <div className="img" style={{backgroundImage: `url(${minimize(el.Thumb[0], true)})`}}>
+                                        <div className="img" style={{backgroundImage: `url(${minimize(el.Thumb[0], 'thumbnail')})`}}>
                                             <div className="date">
                                                 <p>{date.getDate()}</p>
                                                 <small>{months[date.getMonth()]}</small>

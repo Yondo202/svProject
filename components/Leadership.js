@@ -39,7 +39,7 @@ const Leadership = ({data}) => {
                     <P style={{ marginBottom: 30 }}>{data.Description && data.Description}</P>
                     <img
                         style={{ height: 80 }}
-                        src={minimize(data.Signature, true, true)}
+                        src={minimize(data.Signature, 'medium')}
                     />
                     <Ptitle>{data.Name && data.Name}</Ptitle>
                     <p style={{ marginBottom: 50 }}>{data.Position && data.Position}</p>
@@ -49,7 +49,7 @@ const Leadership = ({data}) => {
                     <Img
                         id="pr"
                         style={{ width: "100%" }}
-                        src={minimize(data.Avatar, true, true)}
+                        src={minimize(data.Avatar, 'medium')}
                     />
                 </div>
             </div>
