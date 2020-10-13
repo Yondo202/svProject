@@ -17,7 +17,7 @@ const PreSeo = ({seo}) => {
                 <meta property="og:title" content={title ? title + " - " + ctx.name : ctx.name} />
                 <meta name="description" content={description ? description : ctx.description}/>
                 <meta property="og:description" content={description ? description : ctx.description} />
-                <meta property="og:image" content={thumb ? thumb : ctx.frontUrl+'/img/seo.jpg'} />
+                <meta property="og:image" content={thumb ? thumb : ctx.serverUrl+'/uploads/1_min_0a6f9c8f3f.jpg'} />
                 <meta property="og:url" content={ctx.frontUrl + Router.asPath} />
                 {article && <meta property="og:type" content="article" />}
             </Head>
@@ -29,7 +29,7 @@ const PreSeo = ({seo}) => {
             <meta property="og:title" content={ctx.name} />
             <meta name="description" content={ctx.description}/>
             <meta property="og:description" content={ctx.description} />
-            <meta property="og:image" content={ctx.frontUrl+'/img/seo.jpg'} />
+            <meta property="og:image" content={ctx.serverUrl+'/uploads/1_min_0a6f9c8f3f.jpg'} />
             <meta property="og:url" content={ctx.frontUrl + Router.asPath} />
         </Head>
     )
