@@ -17,7 +17,7 @@ const minimize = (obj, quality) => {
         if(quality === 'medium') return formats.small && CH(formats.small.url) || formats.medium && CH(formats.medium.url) || formats.large && CH(formats.large.url) || obj.url && CH(obj.url) || placeholder
         if(quality === 'small') return formats.thumbnail && CH(formats.thumbnail.url) || formats.small && CH(formats.small.url) || formats.medium && CH(formats.medium.url) || formats.large && CH(formats.large.url) || obj.url && CH(obj.url) || placeholder
         if(quality === 'thumbnail') return formats.thumbnail && CH(formats.thumbnail.url) || formats.small && CH(formats.small.url) || formats.medium && CH(formats.medium.url) || formats.large && CH(formats.large.url) || obj.url && CH(obj.url) || placeholder
-        return formats.medium && CH(formats.medium.url) || formats.large && CH(formats.large.url) || obj.url && CH(obj.url) || placeholder
+        return formats.large && CH(formats.large.url) || obj.url && CH(obj.url) || placeholder
     }
 
     if(quality === 'large') return formats.large && CH(formats.large.url) || obj.url && CH(obj.url) || placeholder
