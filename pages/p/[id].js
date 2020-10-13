@@ -13,7 +13,7 @@ const Index = ({data}) => {
 
     return (
         <motion.div exit={{ opacity: 0 }} initial={{ opacity: 0 }} animate={{ opacity: 1 }} >
-            <Root seo={SEO} noFooter={data.NoFooter}>{completelyLoaded && <ResolveComponent data={Layout}/>}</Root>
+            <Root noFooter={data.NoFooter}>{completelyLoaded && <ResolveComponent data={Layout}/>}</Root>
         </motion.div>
     );
 };
