@@ -4,9 +4,12 @@ import { motion } from "framer-motion";
 import Root from "@/core/Root";
 import ResolveComponent from "@/components/dynamic/ResolveComponent"
 import checkLanguage from "@/components/miscs/checkLanguage";
+import {MenuContext} from '@/miscs/ContextMenuProvider'
+import { useContext } from "react";
 
 const Index = ({data}) => {
     let {Layout} = data
+    const {completelyLoaded} = useContext(MenuContext);
     return (
         <motion.div
             exit={{ opacity: 0 }}
@@ -18,7 +21,7 @@ const Index = ({data}) => {
                 <meta name="description" content="To be continued..." />
             </Head>
             <Root noFooter>
-                <ResolveComponent data={Layout}/>
+                {completelyLoaded && <ResolveComponent data={Layout}/>}
             </Root>
         </motion.div>
     );

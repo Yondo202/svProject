@@ -12,7 +12,7 @@ export default function Root(props) {
     return (
         <div className="Layout">
             <Header links={menu ? menu.Menu : []}/>
-            {menu ? menu.Menu ? menu.Menu.length ? props.children : null : null : null}
+            {props.children}
             {props.noFooter ? null : <Footer /> }
         </div>
     )

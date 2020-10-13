@@ -57,8 +57,8 @@ const Menu = ({links}) => {
                                         </div>
                                         :
                                         <Link href={el.Path} key={i}>
-                                            <a target={el.Path.includes('.') && "_blank"}>
-                                                <div className="parent">
+                                            <a target={el.Path.includes('.') ? "_blank" : ""}>
+                                                <div className="parent" onClick={()=>setOpen(false)}>
                                                     <div className="parent-title">{el.Title}</div>
                                                 </div>
                                             </a>

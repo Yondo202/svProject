@@ -3,42 +3,27 @@ import styled from 'styled-components';
 import {TiSocialFacebook} from 'react-icons/ti'
 import {FaTwitter, FaLinkedinIn} from 'react-icons/fa'
 import {FacebookShareButton, TwitterShareButton, LinkedinShareButton} from 'react-share'
-import Head from 'next/head';
 
-const SocialFixed = ({title, description, thumb, url}) => {
+const SocialFixed = ({url}) => {
     let path = window.location.origin + '/news/' + url
     return (
-        <>
-        <Head>
-            {title && <title>{title}</title>}
-            {description && <meta name="description" content={description}/>}
-            {url && <meta property="og:url" content={path} />}
-            <meta property="og:type" content="article" />
-            {title && <meta property="og:title" content={title} />}
-            {title && <meta property="og:description" content={title} />}
-            {thumb && <meta property="og:image" content={thumb} />}
-        </Head>
         <Wrapper>
             <FacebookShareButton url={path}>
                 <div className="icons">
                     <TiSocialFacebook/>
                 </div>
             </FacebookShareButton>
-            
             <TwitterShareButton url={path}>
                 <div className="icons">
                     <FaTwitter/>
                 </div>
             </TwitterShareButton>
-            
             <LinkedinShareButton url={path}>
                 <div className="icons">
                     <FaLinkedinIn/>
                 </div>
             </LinkedinShareButton>
-            
         </Wrapper>
-        </>
     );
 };
 

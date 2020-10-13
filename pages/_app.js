@@ -7,16 +7,19 @@ import * as theme from "@/miscs/theme";
 import TagManager from "react-gtm-module";
 import Axios from "axios";
 
+const base = "http://admin-mn.tavanbogdproperty.mn";
+
 class MyApp extends App {
     state = {
         menu: {},
         information: {},
         config: {},
+        completelyLoaded: false
     };
     async componentDidMount() {
         const res = await Axios.post('/api/base', {query: `query ${queryString}`})
-        const config = {width: window.innerWidth, height: window.innerHeight};
-        this.setState({ menu: res.data.data.menu, information: res.data.data.generalInfo, config })
+        const config = {width: window.innerWidth, height: window.innerHeight, base};
+        this.setState({ menu: res.data.data.menu, information: res.data.data.generalInfo, config, completelyLoaded: true})
         
         // GOOGLE TAG MANAGER
         const tagManagerArgs = { gtmId: res.data.data.generalInfo.GoogleTagManagerID };

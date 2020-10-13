@@ -14,7 +14,7 @@ const BlogDetail = ({data, other}) => {
     const ParsedContent = ContentParser.parse(data.Content);
     return (
         <Container className="container">
-            <SocialFixed thumb={minimize(data.Thumb[0], 'medium')} title={data.Title} url={data.Slug} description={decrease(data.Content, 160)}/>
+            <SocialFixed url={data.Slug}/>
             <div className="row">
                 <div className="col-md-9 left">
                     <img className="mainimg" src={minimize(data.Thumb[0], 'large')} />
