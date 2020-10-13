@@ -14,7 +14,11 @@ class MyApp extends App {
         menu: {},
         information: {},
         config: {},
-        completelyLoaded: false
+        completelyLoaded: false,
+        serverUrl: "http://admin-mn.tavanbogdproperty.mn",
+        frontUrl: "http://tavanbogdproperty.mn",
+        name: "Tavan Bogd Property",
+        description: `Манай компани Таван Богд Группийн 18 дахь охин компани ба барилга, бүтээн байгуулалтын салбарт олон улсын стандартад нийцсэн өндөр чанартай, шинэлэг архитектур төлөвлөлттэй, эрүүл аюулгүй орчинг бүрдүүлсэн "GERLUG VISTA" төслийг хэрэгжүүлж байна.`
     };
     async componentDidMount() {
         const res = await Axios.post('/api/base', {query: `query ${queryString}`})

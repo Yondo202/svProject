@@ -1,5 +1,4 @@
 import React from "react";
-import Head from "next/head";
 import { motion } from "framer-motion";
 import Root from "@/core/Root";
 import ResolveComponent from "@/components/dynamic/ResolveComponent"
@@ -8,21 +7,13 @@ import {MenuContext} from '@/miscs/ContextMenuProvider'
 import { useContext } from "react";
 
 const Index = ({data}) => {
+
     let {Layout} = data
     const {completelyLoaded} = useContext(MenuContext);
+
     return (
-        <motion.div
-            exit={{ opacity: 0 }}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-        >
-            <Head>
-                <title>Tavan Bogd Properties</title>
-                <meta name="description" content="To be continued..." />
-            </Head>
-            <Root noFooter>
-                {completelyLoaded && <ResolveComponent data={Layout}/>}
-            </Root>
+        <motion.div exit={{ opacity: 0 }} initial={{ opacity: 0 }} animate={{ opacity: 1 }} >
+            <Root noFooter>{completelyLoaded && <ResolveComponent data={Layout}/>}</Root>
         </motion.div>
     );
     

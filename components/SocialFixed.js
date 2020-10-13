@@ -3,22 +3,28 @@ import styled from 'styled-components';
 import {TiSocialFacebook} from 'react-icons/ti'
 import {FaTwitter, FaLinkedinIn} from 'react-icons/fa'
 import {FacebookShareButton, TwitterShareButton, LinkedinShareButton} from 'react-share'
+import {MenuContext} from '@/miscs/ContextMenuProvider'
+import { useContext } from "react";
+import { useRouter } from "next/router";
 
-const SocialFixed = ({url}) => {
-    let path = window.location.origin + '/news/' + url
+const SocialFixed = () => {
+
+    const {frontUrl} = useContext(MenuContext);
+    const Router = useRouter()
+
     return (
         <Wrapper>
-            <FacebookShareButton url={path}>
+            <FacebookShareButton url={frontUrl + Router.asPath}>
                 <div className="icons">
                     <TiSocialFacebook/>
                 </div>
             </FacebookShareButton>
-            <TwitterShareButton url={path}>
+            <TwitterShareButton url={frontUrl + Router.asPath}>
                 <div className="icons">
                     <FaTwitter/>
                 </div>
             </TwitterShareButton>
-            <LinkedinShareButton url={path}>
+            <LinkedinShareButton url={frontUrl + Router.asPath}>
                 <div className="icons">
                     <FaLinkedinIn/>
                 </div>
