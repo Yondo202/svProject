@@ -17,9 +17,9 @@ const BlogDetail = ({data, other}) => {
             <SocialFixed/>
             <div className="row">
                 <div className="col-md-9 left">
-                    <img className="mainimg" src={minimize(data.Thumb[0], 'large')} />
-                    <LinedText className="linedtext" red>REAL ESTATE</LinedText>
+                    {!data.HideThumb && <img className="mainimg" src={minimize(data.Thumb[0], 'large')} />}
                     <h1 className="maintitle">{data.Title}</h1>
+                    <LinedText className="linedtext" red>REAL ESTATE</LinedText>
                     <div className="datecon">
                         <span>{formatDate(data.createdAt)} / By {data.created_by.firstname+' '+data.created_by.lastname}</span>
                     </div>
