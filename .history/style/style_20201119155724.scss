@@ -1,0 +1,20 @@
+body{
+    // display: none;
+}
+
+.ReactModalPortal{
+    .ReactModal__Overlay--after-open{
+        background-color: rgba(0,0,0,0.7) !important;
+        // overflow-y: scroll;
+        .ReactModal__Content--after-open{
+            // height: 50vh;
+            // width: 70vw;
+            // text-align: start;
+            // justify-self: flex-start;
+            .CloseBtn{
+                top:0;
+                position: absolute;
+            }
+        }
+    }
+}

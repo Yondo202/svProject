@@ -1,0 +1,29 @@
+body{
+    // display: none;
+}
+
+.ReactModalPortal{
+    .ReactModal__Overlay--after-open{
+        background-color: rgba(0,0,0,0.7) !important;
+        // overflow-y: scroll;
+        .ReactModal__Content--after-open{
+            // height: 50vh;
+            // width: 70vw;
+            // text-align: start;
+            // justify-self: flex-start;
+            padding: 0px !important;
+
+            
+            .CloseBtn{
+                display: flex;
+                flex-direction: row;
+                width: 100%;
+                align-items: flex-start;
+                justify-content: flex-end;
+                text-align: right;
+                cursor: pointer;
+                padding: 2px 2px;
+            }
+        }
+    }
+}
