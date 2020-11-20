@@ -1,0 +1,42 @@
+body{
+    // display: none;
+}
+
+.ReactModalPortal{
+    .ReactModal__Overlay--after-open{
+        background-color: rgba(0,0,0,0.7) !important;
+        // overflow-y: scroll;
+        .ReactModal__Content--after-open{
+            top: 20% !important;
+            left: 30% !important;
+            // height: 50vh;
+            // width: 70vw;
+            // text-align: start;
+            // justify-self: flex-start;
+            padding: 10px !important;
+            
+
+            .closePar{
+                display: flex;
+                flex-direction: row;
+                width: 100%;
+                align-items: flex-start;
+                justify-content: flex-end;
+                text-align: right;
+                margin-bottom: 18px;
+                .CloseBtn{
+                    font-size: 22px;
+                    cursor: pointer;
+                    padding: 0px 10px;
+                    background-color: aquamarine;
+                    font-weight: 500;
+                }
+            }
+            
+        }
+    }
+}
+
+option{
+    width: 100%;
+}
