@@ -14,7 +14,8 @@ export default function MyApp({ Component, pageProps }) {
     return (
       <>
         <Head>
-         
+          <div dangerouslySetInnerHTML={createMarkup()}></div>
+          <div dangerouslySetInnerHTML={shareSelectedText()}></div>
         </Head>
         <Component {...pageProps} />
       </>
