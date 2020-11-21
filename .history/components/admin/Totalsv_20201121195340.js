@@ -68,7 +68,6 @@ const Container = styled.div`
         cursor:pointer;
         transition:all 0.4s ease;
         margin-bottom:14px;
-        background-color:white;
         &:hover{
             -webkit-box-shadow: 1px 6px 18px -7px rgba(0, 0, 0, 0.75);
             -moz-box-shadow: 1px 6px 18px -7px rgba(0, 0, 0, 0.75);

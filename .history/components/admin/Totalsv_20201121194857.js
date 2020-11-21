@@ -7,7 +7,7 @@ function Totalsv(props) {
     return (
         <Container className="container">
             <div className="headerPar">
-             <h2>Нийт анкет</h2>
+             <h1>Нийт анкет</h1>
             </div>
             <div className="row">
                 {props.all.map((el, i) => {
@@ -68,11 +68,10 @@ const Container = styled.div`
         cursor:pointer;
         transition:all 0.4s ease;
         margin-bottom:14px;
-        background-color:white;
         &:hover{
             -webkit-box-shadow: 1px 6px 18px -7px rgba(0, 0, 0, 0.75);
             -moz-box-shadow: 1px 6px 18px -7px rgba(0, 0, 0, 0.75);
-            box-shadow: 8px 6px 16px -4px rgba(0, 0, 0, 0.75);
+            box-shadow: 8px 6px 16px -6px rgba(0, 0, 0, 0.75);
             .Name{
                 color: #00818A;
                 font-size:19px;
@@ -122,9 +121,7 @@ const Container = styled.div`
     }
     @media only screen and (max-width:786px){
         .userPar{
-            flex-direction:column;
-            justify-content:center;
-            height:100%;
+            height:90px;
             .profilePic{
                 width:18%;
                 img{
@@ -134,7 +131,7 @@ const Container = styled.div`
                 }
             }
             .userInf{
-                width:96%;
+                width:80%;
                 .Name{
                     font-size:15px;
                 }

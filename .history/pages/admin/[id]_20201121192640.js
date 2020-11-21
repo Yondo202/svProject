@@ -14,6 +14,7 @@ function Home(props) {
 export default Home
 
 export async function getServerSideProps({params}) {
+//   const { slug } = context.query
   const allSlugData = await axios(`https://svv-admin.herokuapp.com/forms?id=${params.id}`);
   return {
       props: {
