@@ -1,25 +1,54 @@
 import React from 'react'
 import styled from 'styled-components'
+import Modal from 'react-modal';
+import {IoIosAddCircleOutline} from 'react-icons/io'
+import {RiAddLine} from 'react-icons/ri'
+import Education from '@/components/admin/education'
+import BonusInf from '@/components/admin/bonusInf' 
+import Reason from '@/components/admin/reason'
 
-function reason() {
+
+
+
+function form2() {
+   
     return (
         <Container>
             <div className="headerPAr">
-                <h5 className="title">Манай байгууллагыг сонгох болсон шалтгаан</h5>
+                <h5 className="title">MS OFFICE-Н СУУРЬ МЭДЛЭГ, АНГЛИ ХЭЛ</h5>
+                
                 </div>
-                <div id="TextArea" className="ParentInfo">
+                <div className="ParentInfo">
                 <div className="colOne">
                     <div className="main-info">
-                    <label className="B">Манай байгууллага таны зорилготой нэгдэж байгаа эсэх:</label>
-                        <textarea id="reasonText" className="getinput val" name="reason"  type="textarea" placeholder="80 үгэнд багтаан бичнэ үү" />
+                        <span className="B">Англи хэл:</span>
+                        <span className="val">Гантулга</span>
+                    </div>
+                    <div className="main-info">
+                        <span className="B">Microsoft Excel:</span>
+                        <span className="val">Ёндонжамц</span>
                     </div>
                 </div>
+
+                <div className="colOne">
+                    <div className="main-info">
+                        <span className="B">Microsoft Word:</span>
+                        <span className="val">3 (Ээж, Эмэгтэй дүү)</span>
+                    </div>
+                    <div className="main-info">
+                        <span className="B">Хурдан бичих:</span>
+                        <span className="val">99801406</span>
+                    </div>
+                    
+                </div>
             </div>
+            <BonusInf />
+            <Reason />
         </Container>
     )
 }
 
-export default reason
+export default form2
 
 const Container = styled.div`
     padding-top:10px;   
@@ -39,52 +68,40 @@ const Container = styled.div`
                 background:white;
             }
         }
-        .checkboxes{
-            cursor:pointer;
-            font-size:18px;
-            border-radius:50%;
-            transition:all 0.3s ease;
-            #subscribeNews{
-            //    height:14px;
-            //    width:16px;
-            }
-        }
     }
-    #TextArea{
+    .ParentInfo{
          display:flex;
          flex-direction: row;
          justify-content:space-around; 
          width:70%;
          font-size:16px;  
-         border-bottom: solid 0.5px rgba(255,255,255, 0.3);
+         border-bottom: solid 0.5px rgba(255,255,255, 0);
          padding-bottom:10px;
-         padding-left:24px;
          .colOne{
-             width:100%;
+             width:43%;
              .main-info{
                 display:flex;
                 flex-direction:row;
                 justify-content:start;
                 
                  .B{
-                     color:rgba(255,255,255, 1);
-                     width:60%;
+                     color:rgba(255,255,255, 0,5);
+                     width:40%;
                  }
                 
-                 #reasonText{
+                 .val{
                     border-style:none;
-                    border:solid 1px white;
                     border-radius:2px;
                     width:55%;
                     background:rgba(255,255,255, 0);
-                    height:80px;
+                    height:24px;
                     transition:all 0.6s ease;
                     color:rgba(255,255,255,1);
+                    
                     option{
                         color:black;
                     }
                     &:focus{
-                        border-bottom:solid 1px white;
                         background:rgba(255,255,255, .2);
                         border-radius:0px;
                     }
@@ -112,10 +129,9 @@ const Container = styled.div`
         .headerPAr{
             width:100%;
         }
-        #TextArea{
+        .ParentInfo{
             flex-direction: column;
-            width:95%;
-            padding-left:0px;;
+            width:100%;
             .colOne{
                 width:100%;
             }

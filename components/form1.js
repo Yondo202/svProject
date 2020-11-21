@@ -9,21 +9,6 @@ import WorkExperience from '../components/workExperience'
 
 
 function form1() {
-    // const handleClick = async (e) =>{
-    //     e.preventDefault();
-    //     let rs = document.querySelectorAll('.getinput');
-    //     let arr = Array.from(rs);
-    //     let final = {};
-    //     arr.map(element=>{
-    //         let field = element.name;
-    //         let value = element.value;
-    //         final[field] = value
-    //     });
-    //     console.log(final, "kekeke")
-    //     await Axios.post('http://localhost:1337/forms', final);
-    // }
-
-
     return (
         <Container>
             <div className="headerPAr">

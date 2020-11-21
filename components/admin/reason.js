@@ -1,7 +1,14 @@
 import React from 'react'
 import styled from 'styled-components'
+import {RiAddLine} from 'react-icons/ri'
+import Education from '@/components/admin/education'
+import BonusInf from '@/components/admin/bonusInf' 
 
-function reason() {
+
+
+
+function form2() {
+  
     return (
         <Container>
             <div className="headerPAr">
@@ -10,8 +17,7 @@ function reason() {
                 <div id="TextArea" className="ParentInfo">
                 <div className="colOne">
                     <div className="main-info">
-                    <label className="B">Манай байгууллага таны зорилготой нэгдэж байгаа эсэх:</label>
-                        <textarea id="reasonText" className="getinput val" name="reason"  type="textarea" placeholder="80 үгэнд багтаан бичнэ үү" />
+                        <span> Манай байгууллага таны зорилготой нэгдэж байгаа эсэх Манай байгууллага таны зорилготой нэгдэж байгаа эсэх Манай байгууллага таны зорилготой нэгдэж байгаа эсэх Манай байгууллага таны зорилготой нэгдэж байгаа эсэх Манай байгууллага таны зорилготой нэгдэж байгаа эсэх Манай байгууллага таны зорилготой нэгдэж байгаа эсэх</span>
                     </div>
                 </div>
             </div>
@@ -19,7 +25,7 @@ function reason() {
     )
 }
 
-export default reason
+export default form2
 
 const Container = styled.div`
     padding-top:10px;   

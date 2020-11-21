@@ -16,5 +16,6 @@ export default function Root({children, seo}) {
 }
 
 const Container = styled.div `
-    font-size: ${({theme})=>theme.fontSize};
 `
+
+// font-size: ${({theme})=>theme.fontSize};

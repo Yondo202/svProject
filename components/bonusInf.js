@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import {RiAddLine} from 'react-icons/ri'
 
-function form2() {
+function bonusInf() {
   
     return (
         <Container>
@@ -47,7 +47,7 @@ function form2() {
     )
 }
 
-export default form2
+export default bonusInf
 
 const Container = styled.div`
     padding-top:10px;   

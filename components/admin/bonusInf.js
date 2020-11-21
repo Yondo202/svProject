@@ -1,25 +1,33 @@
 import React from 'react'
 import styled from 'styled-components'
+import {RiAddLine} from 'react-icons/ri'
 
-function reason() {
+function bonusInf() {
+  
     return (
         <Container>
             <div className="headerPAr">
-                <h5 className="title">Манай байгууллагыг сонгох болсон шалтгаан</h5>
+                <h5 className="title">НЭМЭЛТ МЭДЭЭЛЭЛ</h5>
                 </div>
-                <div id="TextArea" className="ParentInfo">
+                <div id="ThisStyle" className="ParentInfo">
                 <div className="colOne">
                     <div className="main-info">
-                    <label className="B">Манай байгууллага таны зорилготой нэгдэж байгаа эсэх:</label>
-                        <textarea id="reasonText" className="getinput val" name="reason"  type="textarea" placeholder="80 үгэнд багтаан бичнэ үү" />
+                        <span className="B">Цалингийн хүлээлт:</span>
+                        <span className="val">Гантулга</span>
+                    </div>
+                    <div className="main-info">
+                        <span className="B">Ажиллах боломжтой цагийн хуваарь:</span>
+                        <span className="val">Ёндонжамц</span>
                     </div>
                 </div>
+
+               
             </div>
         </Container>
     )
 }
 
-export default reason
+export default bonusInf
 
 const Container = styled.div`
     padding-top:10px;   
@@ -50,17 +58,17 @@ const Container = styled.div`
             }
         }
     }
-    #TextArea{
+    #ThisStyle{
          display:flex;
          flex-direction: row;
-         justify-content:space-around; 
+         justify-content:space-between; 
+         padding-left:24px;
          width:70%;
-         font-size:16px;  
+         font-size:16px; 
          border-bottom: solid 0.5px rgba(255,255,255, 0.3);
          padding-bottom:10px;
-         padding-left:24px;
          .colOne{
-             width:100%;
+             width:66%;
              .main-info{
                 display:flex;
                 flex-direction:row;
@@ -71,20 +79,19 @@ const Container = styled.div`
                      width:60%;
                  }
                 
-                 #reasonText{
+                 .val{
                     border-style:none;
-                    border:solid 1px white;
                     border-radius:2px;
-                    width:55%;
+                    width:40%;
                     background:rgba(255,255,255, 0);
-                    height:80px;
+                    height:24px;
                     transition:all 0.6s ease;
                     color:rgba(255,255,255,1);
+                    
                     option{
                         color:black;
                     }
                     &:focus{
-                        border-bottom:solid 1px white;
                         background:rgba(255,255,255, .2);
                         border-radius:0px;
                     }
@@ -112,10 +119,10 @@ const Container = styled.div`
         .headerPAr{
             width:100%;
         }
-        #TextArea{
+        #ThisStyle{
+            padding-left:0px;
             flex-direction: column;
             width:95%;
-            padding-left:0px;;
             .colOne{
                 width:100%;
             }

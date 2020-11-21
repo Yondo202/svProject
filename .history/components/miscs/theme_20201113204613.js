@@ -1,1 +1,0 @@
-export const fontSize = "20px";

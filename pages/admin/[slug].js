@@ -1,14 +1,11 @@
-import React from "react";
-import { motion } from "framer-motion";
-import Background from '@/components/Top'
-// import Forms from '../../components/mainForm'
-import Totalsv from "@/components/admin/Totalsv";
-
+import React from 'react'
+import Form from '@/components/admin/mainForm'
+import Top from '@/components/Top'
 function Home() {
     return (
         <div>
-            {/* <Background /> */}
-            <Totalsv />
+            <Top />
+            <Form />
         </div>
     )
 }
