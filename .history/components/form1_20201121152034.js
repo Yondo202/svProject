@@ -28,8 +28,8 @@ function form1() {
                         <label className="B">Хүйс:</label>
                         <select className="getinput val" name="sex" placeholder="сүно">
                             <option value="" >- Сонго -</option>
-                            <option value="Эрэгтэй">Эрэгтэй</option>
-                            <option value="Эмэгтэй">Эмэгтэй</option>
+                            <option value="man">Эрэгтэй</option>
+                            <option value="women">Эмэгтэй</option>
                         </select>
                     </div>
                     <div className="main-info">
@@ -59,10 +59,6 @@ function form1() {
                                 <option value="6">6</option>
                                 <option value="7">7</option>
                                 <option value="8">8</option>
-                                <option value="9">9</option>
-                                <option value="10">10</option>
-                                <option value="11">11</option>
-                                <option value="12">12</option>
                             </select>
                         </div>
                       

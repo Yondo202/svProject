@@ -24,6 +24,7 @@ function Totalsv(props) {
                                     </Link>
                                     <div className="InfSmPar">
                                         <div className="mergejil">
+
                                             <span>Мэргэжил: {el.mergejil}</span>
                                             <span>Боловсрол: {el.education}</span>
                                         </div>

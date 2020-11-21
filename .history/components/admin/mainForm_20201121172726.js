@@ -2,8 +2,19 @@ import React, { useState } from 'react'
 import styled from 'styled-components'
 import Form1 from '@/components/admin/form1'
 import Form2 from '@/components/admin/form2'
+import { Page, Text, View, Document, StyleSheet, Link } from '@react-pdf/renderer';
 import Linka from 'next/link'
-
+const styles = StyleSheet.create({
+  page: {
+    flexDirection: 'row',
+    backgroundColor: '#E4E4E4'
+  },
+  section: {
+    margin: 10,
+    padding: 10,
+    flexGrow: 1
+  }
+});
 
 
 function Forms(props) {
@@ -64,7 +75,7 @@ function Forms(props) {
   return (
     <Conainer className="container">
       <div className="Header">
-        <Linka to="/admin" href="/admin" passHref>
+        <Linka href="/admin" passHref>
           <div className="backPar">
             <h2 className="one">{`<`}</h2>
             <h2 className="tow">{`<`}</h2>

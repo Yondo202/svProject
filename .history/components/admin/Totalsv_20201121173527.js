@@ -17,13 +17,12 @@ function Totalsv(props) {
                                     <img src="/img/avatar.png" />
                                 </div>
                                 <div className="userInf">
-                                    <Link href="/admin/[id]" as={`/admin/${el.id}`} passHref >
-                                        <a >
-                                          <span className="Name">{el.parent} {el.name}</span>
-                                        </a>
+                                    <Link href="/admin/[slug]" as={`/admin/${el.Slug}`} passHref>
+                                        <span className="Name">{el.parent} {el.name}</span>
                                     </Link>
                                     <div className="InfSmPar">
                                         <div className="mergejil">
+
                                             <span>Мэргэжил: {el.mergejil}</span>
                                             <span>Боловсрол: {el.education}</span>
                                         </div>
@@ -84,13 +83,9 @@ const Container = styled.div`
             display:flex;
             flex-direction:column;
             justify-content:space-around;
-            a{
-                color:black;
-                text-decoration: none; 
-            }
             .Name{
                 transition:all 0.4s ease;
-                font-size:20px;
+                font-size:19px;
             }
             .InfSmPar{
                 display:flex;

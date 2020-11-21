@@ -1,11 +1,10 @@
 {
   "name": "hello-next",
   "version": "1.0.0",
-  "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "next 3002",
     "build": "next build",
-    "start": "next start",
+    "start": "next start -p $PORT",
     "heroku-postbuild": "npm run build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },

@@ -17,13 +17,14 @@ function Totalsv(props) {
                                     <img src="/img/avatar.png" />
                                 </div>
                                 <div className="userInf">
-                                    <Link href="/admin/[id]" as={`/admin/${el.id}`} passHref >
-                                        <a >
+                                    <Link to="/about/[slug]"  href="/admin/[slug]" as={`/admin/${el.Slug}`} passHref >
+                                        <a>
                                           <span className="Name">{el.parent} {el.name}</span>
                                         </a>
                                     </Link>
                                     <div className="InfSmPar">
                                         <div className="mergejil">
+
                                             <span>Мэргэжил: {el.mergejil}</span>
                                             <span>Боловсрол: {el.education}</span>
                                         </div>
