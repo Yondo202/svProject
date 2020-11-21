@@ -83,10 +83,10 @@ function Forms() {
       console.log(FullSizeData, "my length");
         // console.log(addClass, 'this my arr');
         if(FullSizeData > 26){
-          await Axios.post('https://sv-adminn.herokuapp.com/forms',final);
-          alert('Амжилттай илгээгдлээ');
+          await Axios.post('http://localhost:1337/forms',final);
         }else{
           false
+          e.preventDefault();
         }
         // console.log(final, "kekeke")
         // await Axios.post('http://localhost:1337/forms',final);
