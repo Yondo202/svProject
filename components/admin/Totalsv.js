@@ -10,14 +10,14 @@ function Totalsv(props) {
     var today = new Date();
     const CurrentDate = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate()
     // console.log(CurrentDate, "date irleee")
-    // console.log(props.all, 'myAlldata')
+    console.log(props.all.length, 'myAlldata');
     return (
         <Container className="container">
             <div className="headerPar">
              <h2>Нийт анкет</h2>
             </div>
             <div className="row">
-                {props.all.map((el, i) => {
+                {props.all.length ? ( props.all.map((el, i) => {
                     return (
                         <div className="col-md-6" key={i}>
                             <Link href="/admin/[id]" as={`/admin/${el.id}`} passHref >
@@ -46,7 +46,8 @@ function Totalsv(props) {
                             </Link>
                         </div>
                     )
-                })}
+                })): (<h1>Loading...</h1>) }
+               
             </div>
         </Container>
     )
@@ -129,10 +130,14 @@ const Container = styled.div`
         }
     }
     @media only screen and (max-width:786px){
+        .col-md-6{
+            margin-bottom:18px;
+        }
         .userPar{
-            flex-direction:column;
+            flex-direction:row;
             justify-content:center;
             height:100%;
+           
             .profilePic{
                 width:18%;
                 img{
@@ -142,7 +147,7 @@ const Container = styled.div`
                 }
             }
             .userInf{
-                width:96%;
+                width:92%;
                 .Name{
                     font-size:15px;
                 }

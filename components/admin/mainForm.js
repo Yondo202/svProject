@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import Form1 from '@/components/admin/form1';
 import Form2 from '@/components/admin/form2';
 import Linka from 'next/link';
+import PdfComp from '@/components/admin/GeneratePdf'
 
 
 function Forms(props) {
@@ -91,7 +92,8 @@ function Forms(props) {
       <div className="btnPar">
         <button type="button" tabIndex={1} onClick={clickHandler} style={{ transform: `scale(${PrevBtn})` }}>Өмнөх</button>
         <button type="button" tabIndex={2} onClick={clickHandler} style={{ transform: `scale(${NextBtn})` }}>Дараагийн</button>
-        <button type="button" tabIndex={3} onClick={clickHandler} style={{ display: `${Submit}` }}>Хэвлэх (pdf)</button>
+        {/* <PdfComp type="button" tabIndex={3} onClick={clickHandler} style={{ display: `${Submit}` }}>Хэвлэх (pdf)</PdfComp> */}
+        <PdfComp Submit={Submit} />
       </div>
 
     </Conainer>

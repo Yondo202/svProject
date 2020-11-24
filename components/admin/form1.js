@@ -63,7 +63,7 @@ function form1(props) {
                         <span className="val">{props.all.email}</span>
                     </div>
                     <div className="main-info">
-                        <span className="B">Facebook:</span>
+                        <span className="B">Дүүрэг:</span>
                         <span className="val">{ props.all.facebook }</span>
                     </div>
                 </div>
