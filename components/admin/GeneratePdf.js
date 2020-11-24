@@ -32,7 +32,7 @@ export class test extends Component {
                 </div>
             );
         }
-        console.log(users, "this my users")
+        // console.log(users, "this my users")
 
         const jsPdfGenerate = () => {
             const doc = new jsPDF("p", "pt", "letter");
@@ -71,9 +71,7 @@ export class test extends Component {
             doc.autoTable(usersCol3, usersRows3, { startY: 66 * 2.83,  startY3, theme: "grid", styles: {fontSize: 11  }});
 
 
-
-
-            doc.save("jsPDF demo.pdf");
+            doc.save(`SVexport.pdf`);
         }
 
         return (

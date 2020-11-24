@@ -17,7 +17,7 @@ function Totalsv(props) {
              <h2>Нийт анкет</h2>
             </div>
             <div className="row">
-                {props.all.length ? ( props.all.map((el, i) => {
+            { props.all.map((el, i) => {
                     return (
                         <div className="col-md-6" key={i}>
                             <Link href="/admin/[id]" as={`/admin/${el.id}`} passHref >
@@ -40,14 +40,12 @@ function Totalsv(props) {
                                                 
                                             </div>
                                         </div>
-
                                     </div>
                                 </div>
                             </Link>
                         </div>
                     )
-                })): (<h1>Loading...</h1>) }
-               
+                })}
             </div>
         </Container>
     )
