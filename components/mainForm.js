@@ -83,12 +83,15 @@ function Forms() {
       // console.log(arr.classList, "this my class list");
       var FullSizeData = Object.keys(myLenghtData).length;
       console.log(FullSizeData, "my length");
+      const Procent = FullSizeData * 100 / 26 - 4;
+      const FinalProcent = Math.round(Procent);
+      console.log(FinalProcent, "% myProcent");
         // console.log(addClass, 'this my arr');
         if(FullSizeData > 26){
           await Axios.post('https://svv-admin.herokuapp.com/forms',final);
-          alert('Амжилттай илгээгдлээ');
+          alert('Амжилттай илгээгдлээ ✓✓✓');
         } else {
-          alert('Мэдээлэл дутуу байна..');
+          alert(`Таны мэдээлэл ${FinalProcent}% тай байна...   Та гүйцэд бөгөлнө үү!`);
           setMyIndex(1)
           setMyIndex2(2)
           setDisplay("block")
