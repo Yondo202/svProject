@@ -9,6 +9,7 @@ import WorkExperience from '../components/workExperience'
 
 
 function form1() {
+
     return (
         <Container>
             <div className="headerPAr">
@@ -22,7 +23,7 @@ function form1() {
                     </div>
                     <div className="main-info">
                         <label className="B">Нэр:</label>
-                        <input className="getinput val" placeholder="Нэр" type="text" name="name" />
+                        <input className="getinput val"  placeholder="Нэр" type="text" name="name" />
                     </div>
                     <div className="main-info">
                         <label className="B">Хүйс:</label>

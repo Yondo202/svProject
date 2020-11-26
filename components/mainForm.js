@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import styled from 'styled-components'
 import Form1 from '../components/form1'
 import Form2 from '../components/form2'
@@ -13,7 +13,7 @@ function Forms() {
     const [display, setDisplay] = useState('block');
     const [display2, setDisplay2] = useState('none');
     const [transition, setTransition] = useState('0%');
-    const [transition2, setTransition2] = useState('-100%');
+    const [transition2, setTransition2] = useState('100%');
     const [PrevBtn, setPrevBtn] = useState(0);
     const [NextBtn, setNextBtn] = useState(1);
     const [Submit, setSubmit] = useState("none");
@@ -21,6 +21,8 @@ function Forms() {
     const [background2, setBackground2] = useState("none");
     const [colorSet, setColoSet] = useState("black");
     const [colorSet2, setColoSet2] = useState("white");
+
+
    const clickHandler = (e) => {
         // console.log(e.target.tabIndex, "hgahahah")
         if(e.target.tabIndex === 1){
@@ -76,8 +78,7 @@ function Forms() {
               element.classList += " getinput val"
             }
           final[field] = value
-            
-            console.log(element.classList, "this my class list");
+            // console.log(element.classList, "this my class list");
       });
       // console.log(arr.classList, "this my class list");
       var FullSizeData = Object.keys(myLenghtData).length;
@@ -86,13 +87,26 @@ function Forms() {
         if(FullSizeData > 26){
           await Axios.post('https://svv-admin.herokuapp.com/forms',final);
           alert('Амжилттай илгээгдлээ');
-        }else{
+        } else {
           alert('Мэдээлэл дутуу байна..');
-          false
+          setMyIndex(1)
+          setMyIndex2(2)
+          setDisplay("block")
+          setDisplay2("none")
+          setTransition('0%');
+          setTransition2('100%');
+          setopacity("1");
+          setopacity2("0");
+          setPrevBtn(0);
+          setNextBtn(1);
+          setSubmit("none");
+          setBackground("white");
+          setBackground2("none");
+          setColoSet("black");
+          setColoSet2("white");
         }
-        // console.log(final, "kekeke")
-        // await Axios.post('http://localhost:1337/forms',final);
     }
+    
 
     return (
         <Conainer  className="container">
@@ -115,8 +129,8 @@ function Forms() {
               </div>
               <div className="btnPar">
                 <button type="button" tabIndex={1} onClick={clickHandler} style={{ transform:`scale(${PrevBtn})`}}>Өмнөх</button>
-                <button type="button" tabIndex={2} onClick={clickHandler} style={{ transform:`scale(${NextBtn})`}}>Дараагийн</button>
-                <button type="submit" tabIndex={3} onClick={clickHandler} style={{ display:`${Submit}`}}>Илгээх</button>
+                <button type="button"  tabIndex={2} onClick={clickHandler} style={{ transform:`scale(${NextBtn})`}}>Дараагийн</button>
+                <button type="submit" tabIndex={3} onClick={clickHandler} style={{ display:`${Submit}`}} >Илгээх</button>
               </div>
           </form>
           
